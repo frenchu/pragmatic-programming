@@ -5,7 +5,7 @@ variables:
 
 pages:
   script:
-  - hugo --config gitlab.toml
+  - hugo --config config.toml,gitlab.toml
   artifacts:
     paths:
     - public

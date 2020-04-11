@@ -1,0 +1,4 @@
+baseURL = "https://frenchu.github.io/pragmatic-programming"
+
+[Params]
+  commit = "https://github.com/frenchu/pragmatic-programming/tree/"
