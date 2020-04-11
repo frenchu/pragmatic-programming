@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Pragmatic Programming</title>
-    <link>http://frenchu.github.io/pragmatic-programming/posts/</link>
+    <link>https://frenchu.github.io/pragmatic-programming/posts/</link>
     <description>Recent content in Posts on Pragmatic Programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
     
-	<atom:link href="http://frenchu.github.io/pragmatic-programming/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frenchu.github.io/pragmatic-programming/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kotlintest adventures</title>
-      <link>http://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</link>
+      <link>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>http://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</guid>
+      <guid>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</guid>
       <description>common pitfalls and how to deal with them
  Intro Our team currently started cruise to develop next version of ‘the API’ and new set of services emerged during that journey. We have free hand to sail to the open waters of technologies ocean, so can choose the best fit to our project. Our ship wharfed to island named kotlin language. Very quickly we discovered Kotlintest library on this island.</description>
     </item>
