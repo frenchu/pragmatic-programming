@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://frenchu.github.io/pragmatic-programming/categories/</loc>
+    <loc>http://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</loc>
+    <lastmod>2020-04-11T23:24:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://frenchu.github.io/pragmatic-programming/posts/</loc>
+    <lastmod>2020-04-11T23:24:35+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://frenchu.github.io/pragmatic-programming/</loc>
+    <lastmod>2020-04-11T23:24:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://frenchu.github.io/pragmatic-programming/categories/</loc>
   </url>
   
   <url>
