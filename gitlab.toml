@@ -1,12 +1,4 @@
-baseURL = "http://frenchu.gitlab.io/pragmatic-programming"
-languageCode = "en-us"
-title = "Pragmatic Programming"
-theme = "beautifulhugo"
+baseURL = "https://frenchu.gitlab.io/pragmatic-programming"
 
-pygmentsCodeFences = true
-pygmentsUseClasses = true
-disqusShortname = "frenchu85"
-
-enableGitInfo = true
 [Params]
-  commit = "https://github.com/frenchu/pragmatic-programming/tree/"
+  commit = "https://gitlab.com/frenchu/pragmatic-programming/tree/"

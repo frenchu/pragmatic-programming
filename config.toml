@@ -1,12 +1,9 @@
-baseURL = "http://frenchu.github.io/pragmatic-programming"
+baseURL = "https://frenchu.github.io/pragmatic-programming"
 languageCode = "en-us"
 title = "Pragmatic Programming"
 theme = "beautifulhugo"
 
+enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 disqusShortname = "frenchu85"
-
-enableGitInfo = true
-[Params]
-  commit = "https://github.com/frenchu/pragmatic-programming/tree/"
