@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Pragmatic Programming</title>
+    <link>https://frenchu.github.io/pragmatic-programming/series/</link>
+    <description>Recent content in Series on Pragmatic Programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://frenchu.github.io/pragmatic-programming/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kotlintest adoption</title>
+      <link>https://frenchu.github.io/pragmatic-programming/series/kotlintest-adoption/</link>
+      <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
+      
+      <guid>https://frenchu.github.io/pragmatic-programming/series/kotlintest-adoption/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

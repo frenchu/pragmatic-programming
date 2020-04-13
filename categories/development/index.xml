@@ -1,25 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>development on Pragmatic Programming</title>
-		<link>https://frenchu.github.io/pragmatic-programming/categories/development/</link>
-		<description>Recent content in development on Pragmatic Programming</description>
-		<generator>Hugo -- gohugo.io</generator>
-		
-  		<language>en</language>
-		
-		<managingEditor>Page(/categories/development) (Paweł Weselak)</managingEditor>
-    	
-  		<lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
-		
-		<atom:link href="https://frenchu.github.io/pragmatic-programming/categories/development/" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>Kotlintest adventures</title>
-			<link>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</link>
-			<pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
-			<guid>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</guid>
-			<description></description>
-		</item>
-      	
-	</channel>
+  <channel>
+    <title>development on Pragmatic Programming</title>
+    <link>https://frenchu.github.io/pragmatic-programming/categories/development/</link>
+    <description>Recent content in development on Pragmatic Programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://frenchu.github.io/pragmatic-programming/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kotlintest adventures</title>
+      <link>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</link>
+      <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
+      
+      <guid>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</guid>
+      <description>Common pitfalls and how to deal with them
+Intro </description>
+    </item>
+    
+  </channel>
 </rss>

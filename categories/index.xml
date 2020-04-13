@@ -1,25 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Categories on Pragmatic Programming</title>
-		<link>https://frenchu.github.io/pragmatic-programming/categories/</link>
-		<description>Recent content in Categories on Pragmatic Programming</description>
-		<generator>Hugo -- gohugo.io</generator>
-		
-  		<language>en</language>
-		
-		<managingEditor>Page(/categories) (Paweł Weselak)</managingEditor>
-    	
-  		<lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
-		
-		<atom:link href="https://frenchu.github.io/pragmatic-programming/categories/" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>Kotlintest adventures</title>
-			<link>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</link>
-			<pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
-			<guid>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</guid>
-			<description></description>
-		</item>
-      	
-	</channel>
+  <channel>
+    <title>Categories on Pragmatic Programming</title>
+    <link>https://frenchu.github.io/pragmatic-programming/categories/</link>
+    <description>Recent content in Categories on Pragmatic Programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://frenchu.github.io/pragmatic-programming/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>development</title>
+      <link>https://frenchu.github.io/pragmatic-programming/categories/development/</link>
+      <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
+      
+      <guid>https://frenchu.github.io/pragmatic-programming/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qa</title>
+      <link>https://frenchu.github.io/pragmatic-programming/categories/qa/</link>
+      <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
+      
+      <guid>https://frenchu.github.io/pragmatic-programming/categories/qa/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>
