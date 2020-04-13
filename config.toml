@@ -1,58 +1,104 @@
-theme = "harbor"
+theme = "hugo-coder"
 
 languageCode = "en"
-DefaultContentLanguage = "en"
+defaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-disqusShortname = "pragmatic-programming"
+disqusShortName = "pragmatic-programming"
 
 title = "Pragmatic Programming"
-author = "Paweł Weselak"
-paginate = 10
-
-[Author]
-  name = "Paweł Weselak"
+paginate = 20
+canonifyUrls = true
 
 [outputs]
-    section = ["JSON", "HTML"]
-
-[[params.nav]]
-  identifier = "about"
-  name = "About"
-  icon = "fas fa-user fa-lg"
-  url = "/about/"
-  weight = 3
-
-[[params.nav]]
-  identifier = "categories"
-  name = "Category"
-  icon = "fas fa-folder-open fa-lg"
-  url = "categories"
-  weight = 3
-
-[[params.nav]]
-  identifier = "tags"
-  name = "Tags"
-  icon = "fas fa-tag fa-lg"
-  url = "tags"
-  weight = 3
-
-[[params.nav]]
-  identifier = "search"
-  name = "Search"
-  icon = "fas fa-search fa-lg"
-  url = "search"
-  weight = 3
+    home = ["HTML", "RSS", "JSON"]
 
 [params]
-  mainSections = ["post"]
-  favicon = "favicon.ico"
+    author = "Paweł Weselak"
+    description = "Paweł Weselak pragmatyczne programowanie"
+    keywords = "blog,developer,personal"
+    info = "Senior Software Developer"
+    gravatar = "frenchu@o2.pl"
+    footercontent = "Everything should be as simple as possible, but not simplier."
 
-  [params.logo]
-    url = "icon.jpg"
-    width = 50
-    height = 50
-    alt = "Avatar"
+    dateformat = "January 2, 2006"
+
+    hideFooter = false
+    hideCredits = false
+    hideCopyright = false
+    since = 2018
+
+    rtl = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "auto"
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/frenchu/"
+
+[[params.social]]
+    name = "Gitlab"
+    icon = "fab fa-gitlab"
+    weight = 2
+    url = "https://gitlab.com/frenchu/"
+
+[[params.social]]
+    name = "Stackoverflow"
+    icon = "fab fa-stack-overflow"
+    weight = 3
+    url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
+
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 4
+    url = "https://www.linkedin.com/in/pawel-weselak/"
+
+
+[[Menus.main]]
+    name = "About"
+    weight = 1
+    url = "about/"
+
+[[Menus.main]]
+    name = "Projects"
+    weight = 2
+    url = "projects/"
+
+[[Menus.main]]
+    name = "Posts"
+    weight = 3
+    url = "posts/"
+
+[[Menus.main]]
+    name = "Categories"
+    weight = 4
+    url = "categories/"
+
+[[Menus.main]]
+    name = "Tags"
+    weight = 5
+    url = "tags/"
+
+[[Menus.main]]
+    name = "Search"
+    weight = 6
+    url = "search/"
