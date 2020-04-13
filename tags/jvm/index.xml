@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>jvm on Pragmatic Programming</title>
+		<link>https://frenchu.github.io/pragmatic-programming/tags/jvm/</link>
+		<description>Recent content in jvm on Pragmatic Programming</description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/jvm) (Paweł Weselak)</managingEditor>
+    	
+  		<lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
+		
+		<atom:link href="https://frenchu.github.io/pragmatic-programming/tags/jvm/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Kotlintest adventures</title>
+			<link>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</link>
+			<pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
+			<guid>https://frenchu.github.io/pragmatic-programming/post/2020-03-14-kotlintest-pitfalls/</guid>
+			<description></description>
+		</item>
+      	
+	</channel>
+</rss>
