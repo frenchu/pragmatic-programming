@@ -1,4 +1,4 @@
-baseURL = "https://frenchu.gitlab.io/pragmatic-programming"
+baseURL = "https://frenchu.gitlab.io/pragmatic-programming/"
 
 [Params]
   commit = "https://gitlab.com/frenchu/pragmatic-programming/tree/"
