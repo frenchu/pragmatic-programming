@@ -1,1 +1,6 @@
-public
+public/
+
+.idea/
+
+*.bak
+*.old
