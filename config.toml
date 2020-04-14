@@ -1,4 +1,8 @@
 theme = "hugo-coder"
+baseURL = "https://pawelweselak.com/"
+title = "Pragmatic Programming"
+paginate = 20
+canonifyUrls = true
 
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -7,10 +11,6 @@ footnoteReturnLinkContents = "^"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 disqusShortName = "pragmatic-programming"
-
-title = "Pragmatic Programming"
-paginate = 20
-canonifyUrls = true
 
 [outputs]
     home = ["HTML", "RSS", "JSON"]
@@ -22,7 +22,7 @@ canonifyUrls = true
     info = "Senior Software Developer"
     gravatar = "frenchu@o2.pl"
     footercontent = "Everything should be as simple as possible, but not simplier."
-
+    commit = "https://github.com/frenchu/pragmatic-programming/tree/"
     dateformat = "January 2, 2006"
 
     hideFooter = false
