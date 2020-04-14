@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pragmatic Programming</title>
-    <link>https://frenchu.github.io/pragmatic-programming/</link>
+    <link>https://pawelweselak.com/</link>
     <description>Recent content on Pragmatic Programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
     
-	<atom:link href="https://frenchu.github.io/pragmatic-programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pawelweselak.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kotlintest adventures</title>
-      <link>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</link>
+      <link>https://pawelweselak.com/posts/kotlintest-pitfalls/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</guid>
+      <guid>https://pawelweselak.com/posts/kotlintest-pitfalls/</guid>
       <description>Common pitfalls and how to deal with them
 Intro </description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://frenchu.github.io/pragmatic-programming/about/</link>
+      <link>https://pawelweselak.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/about/</guid>
+      <guid>https://pawelweselak.com/about/</guid>
       <description>My name is Paweł Weselak. I&amp;rsquo;m the founder of &amp;ldquo;Paweł Weselak pragmatyczne programowanie&amp;rdquo; company registered in Poland. I have over 10 years of experience in programming around JVM stack. In my work and personal life I follow pragmatic approach for solving problems.
 Clean code advocate. Blockchain and cryptocurriencies enthusiast. Passionate about world economy and geostrategy.
 Feel free to contact me on LindedIn.</description>
@@ -34,19 +34,19 @@ Feel free to contact me on LindedIn.</description>
     
     <item>
       <title>Projects</title>
-      <link>https://frenchu.github.io/pragmatic-programming/projects/</link>
+      <link>https://pawelweselak.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/projects/</guid>
+      <guid>https://pawelweselak.com/projects/</guid>
       <description>PWMS &amp;ndash; Porfolio Wealth Management System Porfolio Wealth Management System is web service allowing private investors to monitor their investments. PWMS supports different types of assets like cash, stocks, cryptocurriencies.</description>
     </item>
     
     <item>
       <title>Search Results</title>
-      <link>https://frenchu.github.io/pragmatic-programming/search/</link>
+      <link>https://pawelweselak.com/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/search/</guid>
+      <guid>https://pawelweselak.com/search/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kotlintest adoption on Pragmatic Programming</title>
-    <link>https://frenchu.github.io/pragmatic-programming/series/kotlintest-adoption/</link>
+    <link>https://pawelweselak.com/series/kotlintest-adoption/</link>
     <description>Recent content in Kotlintest adoption on Pragmatic Programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
     
-	<atom:link href="https://frenchu.github.io/pragmatic-programming/series/kotlintest-adoption/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pawelweselak.com/series/kotlintest-adoption/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kotlintest adventures</title>
-      <link>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</link>
+      <link>https://pawelweselak.com/posts/kotlintest-pitfalls/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/posts/kotlintest-pitfalls/</guid>
+      <guid>https://pawelweselak.com/posts/kotlintest-pitfalls/</guid>
       <description>Common pitfalls and how to deal with them
 Intro </description>
     </item>

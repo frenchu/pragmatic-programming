@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Pragmatic Programming</title>
-    <link>https://frenchu.github.io/pragmatic-programming/tags/</link>
+    <link>https://pawelweselak.com/tags/</link>
     <description>Recent content in Tags on Pragmatic Programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
     
-	<atom:link href="https://frenchu.github.io/pragmatic-programming/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pawelweselak.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jvm</title>
-      <link>https://frenchu.github.io/pragmatic-programming/tags/jvm/</link>
+      <link>https://pawelweselak.com/tags/jvm/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/tags/jvm/</guid>
+      <guid>https://pawelweselak.com/tags/jvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kotlin</title>
-      <link>https://frenchu.github.io/pragmatic-programming/tags/kotlin/</link>
+      <link>https://pawelweselak.com/tags/kotlin/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/tags/kotlin/</guid>
+      <guid>https://pawelweselak.com/tags/kotlin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kotlintest</title>
-      <link>https://frenchu.github.io/pragmatic-programming/tags/kotlintest/</link>
+      <link>https://pawelweselak.com/tags/kotlintest/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/tags/kotlintest/</guid>
+      <guid>https://pawelweselak.com/tags/kotlintest/</guid>
       <description></description>
     </item>
     

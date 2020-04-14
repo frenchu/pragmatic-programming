@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Pragmatic Programming</title>
-    <link>https://frenchu.github.io/pragmatic-programming/categories/</link>
+    <link>https://pawelweselak.com/categories/</link>
     <description>Recent content in Categories on Pragmatic Programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
     
-	<atom:link href="https://frenchu.github.io/pragmatic-programming/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pawelweselak.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>development</title>
-      <link>https://frenchu.github.io/pragmatic-programming/categories/development/</link>
+      <link>https://pawelweselak.com/categories/development/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/categories/development/</guid>
+      <guid>https://pawelweselak.com/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qa</title>
-      <link>https://frenchu.github.io/pragmatic-programming/categories/qa/</link>
+      <link>https://pawelweselak.com/categories/qa/</link>
       <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
       
-      <guid>https://frenchu.github.io/pragmatic-programming/categories/qa/</guid>
+      <guid>https://pawelweselak.com/categories/qa/</guid>
       <description></description>
     </item>
     
