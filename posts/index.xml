@@ -1,25 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Pragmatic Programming</title>
-    <link>https://pawelweselak.com/posts/</link>
-    <description>Recent content in Posts on Pragmatic Programming</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate>
-    
-	<atom:link href="https://pawelweselak.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Kotlintest adventures</title>
-      <link>https://pawelweselak.com/posts/kotlintest-pitfalls/</link>
-      <pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate>
-      
-      <guid>https://pawelweselak.com/posts/kotlintest-pitfalls/</guid>
-      <description>Common pitfalls and how to deal with them
-Intro </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Pragmatic Programming</title><link>https://pawelweselak.com/posts/</link><description>Recent content in Posts on Pragmatic Programming</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Mar 2020 22:45:41 +0200</lastBuildDate><atom:link href="https://pawelweselak.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Kotlintest adventures</title><link>https://pawelweselak.com/posts/kotlintest-pitfalls/</link><pubDate>Sat, 14 Mar 2020 22:45:41 +0200</pubDate><guid>https://pawelweselak.com/posts/kotlintest-pitfalls/</guid><description>Common pitfalls and how to deal with them
+Intro</description></item></channel></rss>
