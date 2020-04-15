@@ -22,7 +22,7 @@ disqusShortName = "pragmatic-programming"
     keywords = "blog,developer,personal"
     info = "Senior Software Developer"
     gravatar = "frenchu@o2.pl"
-    footercontent = "Everything should be as simple as possible, but not simplier."
+    footerContent = "Everything should be as simple as possible, but not simplier."
     commit = "https://github.com/frenchu/pragmatic-programming/tree"
     dateformat = "January 2, 2006"
 
@@ -38,7 +38,7 @@ disqusShortName = "pragmatic-programming"
     # "auto" (use preference set by browser)
     # "dark" (dark background, light foreground)
     # "light" (light background, dark foreground) (default)
-    colorscheme = "auto"
+    colorScheme = "auto"
 
     # Series see also post count
     maxSeeAlsoItems = 5
@@ -74,32 +74,32 @@ disqusShortName = "pragmatic-programming"
     url = "https://www.linkedin.com/in/pawel-weselak/"
 
 
-[[Menus.main]]
+[[menus.main]]
     name = "About"
     weight = 1
     url = "about/"
 
-[[Menus.main]]
+[[menus.main]]
     name = "Projects"
     weight = 2
     url = "projects/"
 
-[[Menus.main]]
+[[menus.main]]
     name = "Posts"
     weight = 3
     url = "posts/"
 
-[[Menus.main]]
+[[menus.main]]
     name = "Categories"
     weight = 4
     url = "categories/"
 
-[[Menus.main]]
+[[menus.main]]
     name = "Tags"
     weight = 5
     url = "tags/"
 
-[[Menus.main]]
+[[menus.main]]
     name = "Search"
     weight = 6
     url = "search/"
