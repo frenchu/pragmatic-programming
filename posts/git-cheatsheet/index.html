@@ -1,0 +1,76 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Paweł Weselak"><meta name=description content="Paweł Weselak pragmatyczne programowanie"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="Git cheatsheet"><meta name=twitter:description content="Frequently used git commands"><meta property="og:title" content="Git cheatsheet"><meta property="og:description" content="Frequently used git commands"><meta property="og:type" content="article"><meta property="og:url" content="https://pawelweselak.com/posts/git-cheatsheet/"><meta property="article:published_time" content="2020-04-16T00:00:00+00:00"><meta property="article:modified_time" content="2020-04-16T22:09:12+02:00"><base href=https://pawelweselak.com/posts/git-cheatsheet/><title>Git cheatsheet · Pragmatic Programming</title><link rel=canonical href=https://pawelweselak.com/posts/git-cheatsheet/><link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css integrity=sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=https://pawelweselak.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://pawelweselak.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=https://pawelweselak.com/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://pawelweselak.com/images/favicon-16x16.png sizes=16x16><meta name=generator content="Hugo 0.69.0"></head><body class=colorscheme-auto><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://pawelweselak.com/>Pragmatic Programming</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fas fa-bars"></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/about/>About</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/projects/>Projects</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/categories/>Categories</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/search/>Search</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title>Git cheatsheet</h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fas fa-calendar"></i><time datetime=2019-01-24T00:00:00Z>January 24, 2019</time></span>
+<span class=reading-time><i class="fas fa-clock"></i>3-minute read</span></div><div class=categories><i class="fas fa-folder"></i><a href=https://pawelweselak.com/categories/tools/>tools</a>
+<span class=separator>•</span>
+<a href=https://pawelweselak.com/categories/qa/>qa</a></div><div class=tags><i class="fas fa-tag"></i><a href=https://pawelweselak.com/tags/git/>git</a>
+<span class=separator>•</span>
+<a href=https://pawelweselak.com/tags/git-flow/>git flow</a></div></div></header><div><h2 id=intro>Intro</h2><p>During the years of experience with git I have noted aside many commands which could be useful.
+In this article I present the most frequently used git commands and also configuration steps I always follow in a new work environment.</p><h2 id=configuration>Configuration</h2><ul><li><p>User information</p><pre><code>  $ git config --global user.name &quot;Weselak, Pawel&quot;
+  $ git config --global user.email &quot;nospam@pawelweselak.com&quot;
+</code></pre></li><li><p>SSH keys</p><pre><code>  $ ssh-keygen -t rsa -b 4096 -C &quot;nospam@pawelweselak.com&quot;
+  $ eval &quot;$(ssh-agent -s)&quot;
+  $ ssh-add ~/.ssh/id_rsa
+</code></pre></li><li><p>safe pull settings</p><pre><code>  $ git config --global pull.rebase true
+  $ git config --global pull.ff only
+</code></pre></li><li><p>clear out local repo from deleted branches</p><pre><code>  $ git config --global fetch.prune true
+</code></pre></li><li><p>apply resolved conflicts to remaining rebase steps</p><pre><code>  $ git config --global rerere.enabled true 
+</code></pre></li><li><p>push only the current branch</p><pre><code>  $ git config --global push.default simple
+</code></pre></li><li><p>fix line breaks on Windows</p><pre><code> $ git config --global core.autocrlf true
+</code></pre></li></ul><h2 id=typical-git-flow>Typical git flow</h2><ol><li><p>Clone remote repository to your local box</p><pre><code> $ git clone git@github.com:frenchu/hugo-coder.git
+</code></pre></li><li><p>Add another remote</p><pre><code> $ git remote add --track master upstream git@github.com:luizdepra/hugo-coder.git
+</code></pre></li><li><p>Get changes from the remote</p><pre><code> $ git fetch upstream
+ $ git merge upstream/master
+</code></pre><p>or</p><pre><code> $ git pull upstream
+</code></pre></li><li><p>Create topic branch</p><pre><code> $ git branch feature/add-readme
+ $ git checkout feature/add-readme
+</code></pre><p>or</p><pre><code> $ git checkout -b feature/add-readme
+</code></pre><p>info about the branch</p><pre><code> $ git branch
+ $ git branch -a
+ $ git branch -vv
+</code></pre></li><li><p>Commit</p><pre><code> $ git status
+ $ git add .
+ $ git status
+ $ git commit -m &quot;README.md file added&quot;
+</code></pre><p>optionally edit your commit if you made a mistake</p><pre><code> $ git commit --amend -m &quot;README.md and License files added&quot;
+</code></pre><p>if you want to keep existing commit message do</p><pre><code> $ git commit --amend --no-edit
+</code></pre><p>if you need to undo three commits type</p><pre><code> $ git reset --soft HEAD~3
+</code></pre><p>or use rebase to interactively edit commits</p><pre><code> $ git rebase -i HEAD~3
+</code></pre></li><li><p>Push</p><pre><code> $ git push origin feature/add-readme
+</code></pre><p>to set upstream for feature pushes do</p><pre><code> $ git push -u origin feature/add-readme
+</code></pre></li></ol><h2 id=usefull-commands>Usefull commands</h2><ul><li><p>stash/unstash</p><pre><code>  $ git stash
+  $ git stash pop
+</code></pre></li><li><p>undo last commit</p><pre><code>  $ git reset --soft HEAD~1
+</code></pre></li><li><p>reset local to remote branch</p><pre><code>  $ git fetch origin
+  $ git reset --hard origin/branch
+</code></pre></li><li><p>rename local branch</p><pre><code>  $ git branch -m &lt;oldname&gt; &lt;newname&gt;
+</code></pre></li><li><p>push with tags</p><pre><code>  $ git push --follow-tags origin master
+</code></pre></li><li><p>push to another branch</p><pre><code>  $ git push origin develop:feature/FR2019_spin_off
+</code></pre></li><li><p>remove remote branch</p><pre><code>  $ git push origin --delete &lt;branch_name&gt;
+</code></pre></li><li><p>squash two last commits</p><pre><code>  $ git reset --soft HEAD^
+  $ git commit --amend
+</code></pre></li><li><p>fix last commit with editing commit message</p><pre><code>  $ git commit --amend --no-edit
+</code></pre></li><li><p>editing previous commits</p><pre><code>  $ git rebase -i HEAD~3                   # Three commit before
+  $ git rebase --interactive 'bbc643cd^'   # Or starting from given hash
+  $ git commit --all --amend --no-edit
+  $ git rebase --continue
+</code></pre></li><li><p>change the author of the commit</p><pre><code>  $ git commit --amend --author=&quot;New Me &lt;new@gmail.com&gt;&quot;
+</code></pre></li><li><p>edit first commit</p><pre><code>  $ git rebase -i --root
+</code></pre></li><li><p>move recent commits to new branch</p><pre><code>  $ git branch new_branch
+  $ git reset --hard HEAD~3
+  $ git checkout new_branch
+</code></pre></li><li><p>move recent commits to existing branch</p><pre><code>  $ git checkout feature
+  $ git merge master
+  $ git checkout master
+  $ git reset --hard HEAD~1
+</code></pre></li><li><p>pull without checkout</p><pre><code>  $ git fetch origin master:master
+</code></pre></li><li><p>prune / clean-up</p><pre><code>  $ git remote prune origin
+  $ git fetch -p &amp;&amp; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+</code></pre></li></ul><h2 id=additional-info>Additional info</h2><ul><li><a href=http://stackoverflow.com/questions/15316601/in-what-cases-could-git-pull-be-harmful>aliases for git pull/up</a></li></ul></div><footer><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"pragmatic-programming"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></footer></article></section></div><footer class=footer><section class=container><p>Everything should be as simple as possible, but not simplier.</p>©
+2018 -
+2020
+Paweł Weselak
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+[<a href=https://github.com/frenchu/pragmatic-programming/tree/960b224be15ff5768f1a67b861458d4d37b2ffd0>960b224</a>]</section></footer></main></body></html>
