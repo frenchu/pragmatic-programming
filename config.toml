@@ -8,6 +8,7 @@ languageCode = "en"
 defaultContentLanguage = "en"
 enableInlineShortcodes = true
 enableGitInfo = true
+enableEmoji = true
 footnoteReturnLinkContents = "^"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
