@@ -8,8 +8,7 @@ tags = [
     "git flow"
 ]
 categories = [
-    "tools",
-    "qa"
+    "tools"
 ]
 +++
 
