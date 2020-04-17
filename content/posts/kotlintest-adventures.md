@@ -20,7 +20,7 @@ aliases = ["kotlintest-pitfalls"]
 
 ## Intro
 
-Our team currently started cruise to develop next version of ‘the API’ and new set of services emerged during that journey. 
+Our team currently started cruise to develop next version of ‘the API' and new set of services emerged during that journey. 
 We have free hand to sail to the open waters of technologies ocean, so can choose the best fit to our project. 
 Our ship wharfed to island named kotlin language. Very quickly we discovered Kotlintest library on this island. 
 When fighting the battle of writing test cases to our production code we had a mutiny incited by Kotlintest. 
@@ -40,31 +40,43 @@ It is also quite popular in the community, actively developed and well supported
 There are few annoying things about Kotlintest. First of all, integration with IntelliJ - the IDE which we use on daily basis, is not so good. 
 It is impossible to execute test case of ones choice from test specification. I tried official IntelliJ plugin with ~~no avail~~. 
 Thanks to my project manager I realised that the plugin to run things smoothly requires some additional configuration.
-And it wasn’t straightforward for me. To set it up, first install plugin named Kotlintest. 
+And it wasn't straightforward for me. To set it up, first install plugin named Kotlintest. 
 After that if you are using gradle in IntelliJ preferences under `Build, Execution, Deployment > Build Tools > Gradle` 
 select Run tests using: IntelliJ IDEA. Then upon running a test, you can choose to run it with the Kotlintest plugin. 
-If it doesn’t work try to use Restart/Invalidate cache option.
+If it doesn't work try to use Restart/Invalidate cache option.
 
-Before the moment I started using Kotlintest plugin, I had found in the documentation mention about prefixing test case with “f:”. 
-It should do the trick as it is done in popular JavaScript libraries. Prefix “f:” means focused here. Unfortunately this tip doesn’t work. 
-Neither standard IntelliJ runner nor Gradle will not execute any tests if I try to focus some test case. 
-IntelliJ informs that there are no tests received. Surprisingly bang tests with exclamation mark “!” works. 
+Before the moment I started using Kotlintest plugin, I had found in the documentation mention about prefixing test case with "f:". 
+It should do the trick as it is done in popular JavaScript libraries. Prefix "f:" means focused here. 
+Unfortunately this tip doesn't work well. 
+Neither standard IntelliJ runner nor Gradle will execute any tests if I try to focus some test case. 
+IntelliJ informs that there are no tests received.
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "FocusedStringSpec.kt" >}}
+
+Surprisingly bang tests with exclamation mark "!" works. 
 It excludes the test case from running. So if want to focus some test case I just exclude all the others. :P 
-Again this feature works perfectly fine with the plugin. 
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "BangStringSpec.kt" >}}
+
+Again this feature works perfectly fine with the kotlintest plugin. 
 This can be solved also by adding [Kotlintest gradle plugin](https://plugins.gradle.org/plugin/io.kotlintest) to your project. 
 Please compare [GitHub issue](https://github.com/kotest/kotest/issues/605).
 
 ## Duplicated test name
 
-There are more issues which will lead to situation where tests should be executed, but they don’t. 
+There are more issues which will lead to situation where tests should be executed, but they don't. 
 It is a serious problem when a test actually should fail. 
 We observed that behaviour when the name of the test case method was duplicated by mistake.
-Any test case of the specification sadly didn’t run.
-It lead to situation where the whole build is green, but actually it isn’t. The problem was masked and not easy to spot.
+Any test case of the specification sadly didn't run.
+It lead to situation where the whole build is green, but actually it isn't. The problem was masked and not easy to spot.
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "DuplicatedStringSpec.kt" >}}
 
 The root cause of the issue was the tiny dependency hell we had in the project. ;) 
 To be more precise, kotlin depends on arrow-core-data in version 0.9.0 while our project uses arrow 0.10.x. 
 It leads to replacement of arrow-core-data version on which Kotlintest is dependent.
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "build.gradle.kts" >}}
 
 ## When Spring eventually comes...
 
@@ -73,14 +85,14 @@ When creation of spring context is failed then none of the test cases is execute
 The same as in previous issue this leads to falsely green build and it is hard to notice. 
 The cause of the issue was the same as in [Duplicated test name](#duplicated-test-name).
 
-One digression on testing with Spring. We don’t like much autowiring lateinit var variables approach. 
+One digression on testing with Spring. We don't like much autowiring lateinit var variables approach. 
 Mutable state is not something we want to have in our functional code even if it is in tests. 
 Hopefully Kotlintest allows to wiring through constructor of test spec. 
 To enable that Spring project extension needs to be added to the project. This approach has some drawback although. 
 The project listeners/extension are executed before test listeners. 
 So if you have any test setup that spring context creation depends on you cannot put it in test listeners. 
 In that case we use spring test context configuration with post construct and post destroy lifecycle methods. 
-In the last resort one can go back to autowired lateinit vars.
+In the last resort one can go back to `autowired` `lateinit` vars.
 
 ## Strange behavior
 
@@ -89,15 +101,17 @@ If you take advantage of BehaviorSpec, most likely you want to run test listener
 given/when/then test case. Use isTopLevel method, otherwise afterTestCase and beforeTestCase methods will execute not only on given, 
 but also on when and then blocks.
 
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "IsTopLevelSpec.kt" >}}
+
 Other strange thing is the way how tests results are reported in IntelliJ after running gradle test task. 
 Only Then names are listed on the report. So if you have several Thens labeled the same way in your Test specification, 
 it it is not easy distinguish them. Problem can be solved with Kotlintest plugin. 
-Running the tests using this plugin will show nested structure of given/when/then on the raport.
+Running the tests using this plugin will show nested structure of given/when/then on the report.
 
 One can complain about tree-like structure of BehaviorSpec. Actually it is a definite advantage of the library. 
 Thanks to that kotlin compiler itself can check the right order of clauses. 
-In JUnit you can put labels or comments, but they don’t have any meaning. 
-While in Spock, a test library for Groovy, checking of labels order is added by the library itself.
+In JUnit you can put labels or comments, but they don't have any meaning. 
+While in Spock, a test library for Groovy, checking of labels order is added by the library.
 
 ## Are you still hiding something from me, Kotlintest?
 
@@ -107,10 +121,15 @@ Dear reader can meet yet another concealed troubles there. Assert softly works w
 But if you want to combine other testing tools like reactor-test for example, 
 they most likely throw some kind of AssertionException when assertion fails. 
 It will cause that assert softly block will be interrupted. 
-If you don’t always follow TDD completely you may not notice this “feature” at the first place. 
+If you don't always follow TDD completely you may not notice this "feature" at the first place. 
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "AssertSoftlySpec.kt" >}}
+
 To avoid that you probably want to implement your custom matchers. 
 In your matcher you can catch AssertionException in the overridden test method. 
 Then return boolean indicating success or failure of the assertion.
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "AssertSoftlyWithCustomMatcherSpec.kt" >}}
 
 Another annoying thing is related with `.config` method usage. 
 In behavioral tests it is defined for `then` but not for `Then` method. 
@@ -118,6 +137,8 @@ I like starting test level names with capital letter since `when` is reserved ke
 In order compile your code, you need to put it in backticks: `` `when` ``. 
 So instead of `given`, `` `when` ``, `then` one can use `Given`, `When`, `Then`. 
 Except you want to add config to the test, in this case you have to use Given, When, then which looks silly.
+
+{{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "ConfigOnThenSpec.kt" >}}
 
 ## Summary
 
