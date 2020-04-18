@@ -1,9 +1,10 @@
 +++ 
 date = 2020-04-11
 title = "Kotest 4.0 migration guide"
-description = "What’s changed in the new version"
+description = "What's changed in the new version"
 tags = [
     "kotlintest",
+    "kotest",
     "kotlin",
     "jvm"
 ]
@@ -13,18 +14,21 @@ categories = [
 ]
 series = ["Kotlintest adoption"]
 aliases = ["kotlintest-migration-guide"]
+images = ["/images/man-on-mountain-road.jpg"]
 +++
 
-*What’s changed in the new version*
+*What's changed in the new version*
+
+{{< figure src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
 
 ## Intro
 
 In my [previous article]({{< ref "posts/kotlintest-adventures.md" >}}) I described how my team solved different issues 
 faced while implementing test cases in Kotlintest, the testing library for Kotlin. 
 Recently there was a major release of that library. 
-Let’s see what has been changed and what steps to take in order to make use of the newest version of the library.
+Let's see what has been changed and what steps to take in order to make use of the newest version of the library.
 
-## What’s your name, Kotlintest?
+## What's your name, Kotlintest?
 
 The most obvious change in the library is its name. The name was changed to Kotest, 
 because of too much similarity with JetBrains kotlin.test package.
@@ -58,7 +62,7 @@ For sure there are more changes like these, but for me it was enough.
 ## Project config
 
 In the Kotest 4.0 we don't need to put project configuration class in the special package like it was before. 
-Instead of having project config in 'io.kotlintest.provided' we can now create configuration class wherever we want. 
+Instead of having project config in `io.kotlintest.provided` we can now create configuration class wherever we want. 
 Kotest will automatically scan classpath to find it. Important note is that ProjectLevelConfig class has been removed. 
 I used more general Extension interface to fill the gap.
 
