@@ -19,10 +19,9 @@ images = ["/images/sailing-ship.jpg"]
 
 *Common pitfalls and how to deal with them*
 
-{{< figure alt="Kotlintest mutiny" src="/images/pirates-only.jpg" caption="Author: Mateusz Dach, Source: Pexels" >}}
+{{< figure alt="Kotlintest mutiny" src="/images/pirates-only.jpg" caption="Photo by Mateusz Dach on Pexels" >}}
 
 ## Intro
-
 Our team currently started cruise to develop next version of ‘the API' and new set of services emerged during that journey. 
 We have free hand to sail to the open waters of technologies ocean, so can choose the best fit to our project. 
 Our ship wharfed to island named kotlin language. Very quickly we discovered Kotlintest library on this island. 
@@ -30,7 +29,6 @@ When fighting the battle of writing test cases to our production code we had a m
 In this article I want to describe the course of the rebellion and how our brave team suppressed it.
 
 ## Why Kotlintest at all?
-
 In terms of writing tests in kotlin you have several test libraries to choose. 
 The most common are Spek, JUnit5 (preferably with some assertion library like AssertJ or HamKrest) and ofcourse Kotlintest. 
 As you probably already anticipated, in our project we decided to use Kotlintest. 
@@ -39,7 +37,6 @@ The library has many useful features like different styles of writing test speci
 It is also quite popular in the community, actively developed and well supported.
 
 ## Minor but persistent
-
 There are few annoying things about Kotlintest. First of all, integration with IntelliJ - the IDE which we use on daily basis, is not so good. 
 It is impossible to execute test case of ones choice from test specification. I tried official IntelliJ plugin with ~~no avail~~. 
 Thanks to my project manager I realised that the plugin to run things smoothly requires some additional configuration.
@@ -66,7 +63,6 @@ This can be solved also by adding [Kotlintest gradle plugin](https://plugins.gra
 Please compare [GitHub issue](https://github.com/kotest/kotest/issues/605).
 
 ## Duplicated test name
-
 There are more issues which will lead to situation where tests should be executed, but they don't. 
 It is a serious problem when a test actually should fail. 
 We observed that behaviour when the name of the test case method was duplicated by mistake.
@@ -82,7 +78,6 @@ It leads to replacement of arrow-core-data version on which Kotlintest is depend
 {{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "build.gradle.kts" >}}
 
 ## When Spring eventually comes...
-
 Similar issue we could encounter while running integration tests with Spring. 
 When creation of spring context is failed then none of the test cases is executed from the test. 
 The same as in previous issue this leads to falsely green build and it is hard to notice. 
@@ -98,7 +93,6 @@ In that case we use spring test context configuration with post construct and po
 In the last resort one can go back to `autowired` `lateinit` vars.
 
 ## Strange behavior
-
 Talking about test listeners there is one thing worth to mention. 
 If you take advantage of BehaviorSpec, most likely you want to run test listener methods before and after *whole* 
 given/when/then test case. Use isTopLevel method, otherwise afterTestCase and beforeTestCase methods will execute not only on given, 
@@ -117,7 +111,6 @@ In JUnit you can put labels or comments, but they don't have any meaning.
 While in Spock, a test library for Groovy, checking of labels order is added by the library.
 
 ## Are you still hiding something from me, Kotlintest?
-
 Please be careful when you are going to use AssertSoftly. 
 Normally all assertions in the assert softly block will be executed even if the first one fails. 
 Dear reader can meet yet another concealed troubles there. Assert softly works well with Kotlintest matchers. 
@@ -144,7 +137,6 @@ Except you want to add config to the test, in this case you have to use Given, W
 {{< gist frenchu ed723987dabb9c52b4af80cdb8be6074 "ConfigOnThenSpec.kt" >}}
 
 ## Summary
-
 Is our journey with Kotlintest over? I hope not. Probably we will discover even more issues, 
 but despite its peculiarities Kotlintest is a promising library. 
 The development is very active and the releases are coming quite frequently. 
@@ -157,4 +149,4 @@ How about you? I strongly encourage you to check the library on your own. Maybe 
 
 Complete project with code samples is available on my [GitHub](https://github.com/frenchu/kotlintest-pitfalls).
 
-{{< figure alt="Kotlintest journey" src="/images/sailing-ship.jpg" caption="Source: Pexels" >}}
+{{< figure alt="Kotlintest journey" src="/images/sailing-ship.jpg" caption="Photo by Pixabay on Pexels" >}}
