@@ -1,9 +1,12 @@
 +++
-title = "About me"
+aliases = ["about-me", "contact"]
 slug = "about"
-aliases = ["about-me","contact"]
-+++
+title = "About me"
+[menu.main]
+name = "About"
+weight = 1
 
++++
 My name is Paweł Weselak. I'm the founder of "Paweł Weselak pragmatyczne programowanie" 
 company registered in Poland. I have over 10 years of experience in programming around JVM stack. 
 In my work and personal life I follow pragmatic approach for solving problems.
