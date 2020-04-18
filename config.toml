@@ -1,76 +1,106 @@
+theme = "hugo-coder"
 baseURL = "https://pawelweselak.com/"
-canonifyUrls = true
-defaultContentLanguage = "en"
-disqusShortName = "pragmatic-programming"
-enableEmoji = true
-enableGitInfo = true
-enableInlineShortcodes = true
-footnoteReturnLinkContents = "^"
-languageCode = "en"
+title = "Pragmatic Programming"
 paginate = 20
+canonifyUrls = true
+
+languageCode = "en"
+defaultContentLanguage = "en"
+enableInlineShortcodes = true
+enableGitInfo = true
+enableEmoji = true
+footnoteReturnLinkContents = "^"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-theme = "hugo-coder"
-title = "Pragmatic Programming"
-[[menu.main]]
-name = "Search"
-url = "search/"
-weight = 6
-[[menu.main]]
-name = "Tags"
-url = "tags/"
-weight = 5
-[[menu.main]]
-name = "Categories"
-url = "categories/"
-weight = 4
-[[menu.main]]
-name = "Posts"
-url = "posts/"
-weight = 3
-[[menu.main]]
-name = "Projects"
-url = "projects/"
-weight = 2
+disqusShortName = "pragmatic-programming"
+
 [outputs]
-home = ["HTML", "RSS", "JSON"]
-[params]
-author = "Paweł Weselak"
-colorScheme = "auto"
-commit = "https://github.com/frenchu/pragmatic-programming/tree"
-dateformat = "January 2, 2006"
-description = "Paweł Weselak pragmatyczne programowanie"
-footerContent = "Everything should be as simple as possible, but not simplier."
-gravatar = "frenchu@o2.pl"
-hideCopyright = false
-hideCredits = false
-hideFooter = false
-info = "Senior Software Developer"
-keywords = "blog,developer,personal"
-maxSeeAlsoItems = 5
-rtl = false
-since = 2010
-[[params.social]]
-icon = "fab fa-github"
-name = "Github"
-url = "https://github.com/frenchu/"
-weight = 1
-[[params.social]]
-icon = "fab fa-gitlab"
-name = "Gitlab"
-url = "https://gitlab.com/frenchu/"
-weight = 2
-[[params.social]]
-icon = "fab fa-stack-overflow"
-name = "Stackoverflow"
-url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
-weight = 3
-[[params.social]]
-icon = "fab fa-linkedin"
-name = "LinkedIn"
-url = "https://www.linkedin.com/in/pawel-weselak/"
-weight = 4
+    home = ["HTML", "RSS", "JSON"]
+
 [taxonomies]
-category = "categories"
-series = "series"
-tag = "tags"
+    category = "categories"
+    series = "series"
+    tag = "tags"
+
+[params]
+    author = "Paweł Weselak"
+    description = "Paweł Weselak pragmatyczne programowanie"
+    keywords = "blog,developer,personal"
+    info = "Senior Software Developer"
+    gravatar = "frenchu@o2.pl"
+    footerContent = "Everything should be as simple as possible, but not simplier."
+    commit = "https://github.com/frenchu/pragmatic-programming/tree"
+    dateformat = "January 2, 2006"
+
+    hideFooter = false
+    hideCredits = false
+    hideCopyright = false
+    since = 2010
+
+    rtl = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorScheme = "auto"
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    [[params.social]]
+        name = "Github"
+        icon = "fab fa-github"
+        weight = 1
+        url = "https://github.com/frenchu/"
+
+    [[params.social]]
+        name = "Gitlab"
+        icon = "fab fa-gitlab"
+        weight = 2
+        url = "https://gitlab.com/frenchu/"
+
+    [[params.social]]
+        name = "Stackoverflow"
+        icon = "fab fa-stack-overflow"
+        weight = 3
+        url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
+
+    [[params.social]]
+        name = "LinkedIn"
+        icon = "fab fa-linkedin"
+        weight = 4
+        url = "https://www.linkedin.com/in/pawel-weselak/"
+
+[menu]
+
+    [[menu.main]]
+        name = "About"
+        weight = 1
+        url = "about/"
+
+    [[menu.main]]
+        name = "Projects"
+        weight = 2
+        url = "projects/"
+
+    [[menu.main]]
+        name = "Posts"
+        weight = 3
+        url = "posts/"
+
+    [[menu.main]]
+        name = "Categories"
+        weight = 4
+        url = "categories/"
+
+    [[menu.main]]
+        name = "Tags"
+        weight = 5
+        url = "tags/"
+
+    [[menu.main]]
+        name = "Search"
+        weight = 6
+        url = "search/"
