@@ -14,9 +14,12 @@ categories = [
 ]
 series = ["Kotlintest adoption"]
 aliases = ["kotlintest-pitfalls"]
+images = ["/images/sailing-ship.jpg"]
 +++
 
 *Common pitfalls and how to deal with them*
+
+{{< figure src="/images/pirates-only.jpg" caption="Author: Mateusz Dach, Source: Pexels" >}}
 
 ## Intro
 
@@ -153,3 +156,5 @@ And also I will check if the above issues has been fixed.
 How about you? I strongly encourage you to check the library on your own. Maybe you have some other solutions to share? Feel free to post your comment below the article.
 
 Complete project with code samples is available on my [GitHub](https://github.com/frenchu/kotlintest-pitfalls).
+
+{{< figure src="/images/sailing-ship.jpg" caption="Source: Pexels" >}}
