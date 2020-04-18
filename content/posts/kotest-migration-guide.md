@@ -19,11 +19,11 @@ images = ["/images/man-on-mountain-road.jpg"]
 
 *What's changed in the new version*
 
-{{< figure alt="Migration to kotest" src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
+{{< figure alt="Migration to kotest - a man on mountain road riding a bike towards rising sun" src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
 
 ## Intro
 
-In the [Kotlintest adventures article]({{< ref "posts/kotlintest-adventures.md" >}}) 
+In the [Kotlintest adventures]({{< ref "posts/kotlintest-adventures.md" >}}) post 
 I described how my team solved different issues faced while implementing test cases in Kotlintest, 
 the testing library for Kotlin. Recently there was a major release of that library. 
 Let's see what has been changed and what steps to take in order to make use of the newest version of the library.
@@ -73,9 +73,9 @@ I used more general Extension interface to fill the gap.
 Finally, I needed to update the kotlin language version. There was problem in the runtime. 
 Definition of class `kotlin.time.MonotonicTimeSource` could not be found. 
 Kotest is using experimental kotlin features for profiling and measuring time of test execution. 
-I updated to the latest version of kotlin language and it fixed the issue.
+I updated to the latest version of kotlin language, and it fixed the issue.
 
 ## What about fixes?
 
-I did't have chance to take a closer look, but I've noticed that arrow dependency issue our team had to deal with 
+I didn't have chance to take a closer look, but I've noticed that arrow dependency issue our team had to deal with 
 has been now resolved. :tada:
