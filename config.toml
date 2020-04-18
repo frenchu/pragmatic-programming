@@ -53,25 +53,25 @@ disqusShortName = "pragmatic-programming"
         name = "Github"
         icon = "fab fa-github"
         weight = 1
-        url = "https://github.com/frenchu/"
-
-    [[params.social]]
-        name = "Gitlab"
-        icon = "fab fa-gitlab"
-        weight = 2
-        url = "https://gitlab.com/frenchu/"
+        url = "https://github.com/frenchu"
 
     [[params.social]]
         name = "Stackoverflow"
         icon = "fab fa-stack-overflow"
-        weight = 3
-        url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
+        weight = 2
+        url = "https://stackoverflow.com/users/4871030/frenchu"
 
     [[params.social]]
         name = "LinkedIn"
         icon = "fab fa-linkedin"
-        weight = 4
+        weight = 3
         url = "https://www.linkedin.com/in/pawel-weselak/"
+
+    [[params.social]]
+        name = "Twitter"
+        icon = "fab fa-twitter"
+        weight = 4
+        url = "https://twitter.com/frenchu85"
 
 [menu]
 
