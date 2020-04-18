@@ -17,6 +17,11 @@ disqusShortName = "pragmatic-programming"
 [outputs]
     home = ["HTML", "RSS", "JSON"]
 
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+
 [params]
     author = "Paweł Weselak"
     description = "Paweł Weselak pragmatyczne programowanie"
@@ -44,63 +49,58 @@ disqusShortName = "pragmatic-programming"
     # Series see also post count
     maxSeeAlsoItems = 5
 
-[taxonomies]
-    category = "categories"
-    series = "series"
-    tag = "tags"
+    [[params.social]]
+        name = "Github"
+        icon = "fab fa-github"
+        weight = 1
+        url = "https://github.com/frenchu/"
 
+    [[params.social]]
+        name = "Gitlab"
+        icon = "fab fa-gitlab"
+        weight = 2
+        url = "https://gitlab.com/frenchu/"
 
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github"
-    weight = 1
-    url = "https://github.com/frenchu/"
+    [[params.social]]
+        name = "Stackoverflow"
+        icon = "fab fa-stack-overflow"
+        weight = 3
+        url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
 
-[[params.social]]
-    name = "Gitlab"
-    icon = "fab fa-gitlab"
-    weight = 2
-    url = "https://gitlab.com/frenchu/"
+    [[params.social]]
+        name = "LinkedIn"
+        icon = "fab fa-linkedin"
+        weight = 4
+        url = "https://www.linkedin.com/in/pawel-weselak/"
 
-[[params.social]]
-    name = "Stackoverflow"
-    icon = "fab fa-stack-overflow"
-    weight = 3
-    url = "https://stackoverflow.com/users/4871030/pawe%c5%82-weselak"
+[menu]
 
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin"
-    weight = 4
-    url = "https://www.linkedin.com/in/pawel-weselak/"
+    [[menu.main]]
+        name = "About"
+        weight = 1
+        url = "about/"
 
+    [[menu.main]]
+        name = "Projects"
+        weight = 2
+        url = "projects/"
 
-[[menus.main]]
-    name = "About"
-    weight = 1
-    url = "about/"
+    [[menu.main]]
+        name = "Posts"
+        weight = 3
+        url = "posts/"
 
-[[menus.main]]
-    name = "Projects"
-    weight = 2
-    url = "projects/"
+    [[menu.main]]
+        name = "Categories"
+        weight = 4
+        url = "categories/"
 
-[[menus.main]]
-    name = "Posts"
-    weight = 3
-    url = "posts/"
+    [[menu.main]]
+        name = "Tags"
+        weight = 5
+        url = "tags/"
 
-[[menus.main]]
-    name = "Categories"
-    weight = 4
-    url = "categories/"
-
-[[menus.main]]
-    name = "Tags"
-    weight = 5
-    url = "tags/"
-
-[[menus.main]]
-    name = "Search"
-    weight = 6
-    url = "search/"
+    [[menu.main]]
+        name = "Search"
+        weight = 6
+        url = "search/"
