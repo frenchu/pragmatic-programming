@@ -1,7 +1,7 @@
 +++ 
 date = 2020-04-11
 title = "Kotest 4.0 migration guide"
-description = "What's changed in the new version"
+description = "What's changed in the new Kotest version"
 tags = [
     "kotlintest",
     "kotest",
@@ -19,13 +19,13 @@ images = ["/images/man-on-mountain-road.jpg"]
 
 *What's changed in the new version*
 
-{{< figure src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
+{{< figure alt="Migration to kotest" src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
 
 ## Intro
 
-In my [previous article]({{< ref "posts/kotlintest-adventures.md" >}}) I described how my team solved different issues 
-faced while implementing test cases in Kotlintest, the testing library for Kotlin. 
-Recently there was a major release of that library. 
+In the [Kotlintest adventures article]({{< ref "posts/kotlintest-adventures.md" >}}) 
+I described how my team solved different issues faced while implementing test cases in Kotlintest, 
+the testing library for Kotlin. Recently there was a major release of that library. 
 Let's see what has been changed and what steps to take in order to make use of the newest version of the library.
 
 ## What's your name, Kotlintest?
@@ -73,7 +73,7 @@ I used more general Extension interface to fill the gap.
 Finally, I needed to update the kotlin language version. There was problem in the runtime. 
 Definition of class `kotlin.time.MonotonicTimeSource` could not be found. 
 Kotest is using experimental kotlin features for profiling and measuring time of test execution. 
-I used the latest version of kotlin language and it fixed the issue.
+I updated to the latest version of kotlin language and it fixed the issue.
 
 ## What about fixes?
 

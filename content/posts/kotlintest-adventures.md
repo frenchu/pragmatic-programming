@@ -19,7 +19,7 @@ images = ["/images/sailing-ship.jpg"]
 
 *Common pitfalls and how to deal with them*
 
-{{< figure src="/images/pirates-only.jpg" caption="Author: Mateusz Dach, Source: Pexels" >}}
+{{< figure alt="Kotlintest mutiny" src="/images/pirates-only.jpg" caption="Author: Mateusz Dach, Source: Pexels" >}}
 
 ## Intro
 
@@ -157,4 +157,4 @@ How about you? I strongly encourage you to check the library on your own. Maybe 
 
 Complete project with code samples is available on my [GitHub](https://github.com/frenchu/kotlintest-pitfalls).
 
-{{< figure src="/images/sailing-ship.jpg" caption="Source: Pexels" >}}
+{{< figure alt="Kotlintest journey" src="/images/sailing-ship.jpg" caption="Source: Pexels" >}}
