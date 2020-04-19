@@ -24,10 +24,10 @@ disqusShortName = "pragmatic-programming"
 
 [params]
     author = "Paweł Weselak"
-    description = "Paweł Weselak pragmatyczne programowanie"
-    keywords = "blog,developer,personal"
+    description = "Blog of Paweł Weselak pragmatyczne programowanie"
+    keywords = "Paweł Weselak,personal blog,senior java developer,senior software engineer"
     info = "Senior Software Developer"
-    gravatar = "frenchu@o2.pl"
+    gravatar = "blog@pawelweselak.com"
     footerContent = "Everything should be as simple as possible, but not simplier."
     commit = "https://github.com/frenchu/pragmatic-programming/tree"
     dateformat = "January 2, 2006"
