@@ -1,15 +1,22 @@
 +++
-aliases = ["kotlintest-pitfalls"]
-categories = ["backend", "qa"]
-date = 2020-03-14T20:45:41Z
-description = "Common kotlintest pitfalls and how to deal with them"
-images = ["/images/sailing-ship.jpg"]
-publishDate = 2020-03-14T00:00:00Z
-series = ["Kotlintest adoption"]
-tags = ["kotlintest", "kotlin", "jvm"]
 title = "Kotlintest adventures"
-
+description = "Common kotlintest pitfalls and how to deal with them"
+date = 2020-03-14T22:45:41+02:00
+publishDate = 2020-03-14
+tags = [
+    "kotlintest",
+    "kotlin",
+    "jvm"
+]
+categories = [
+    "backend",
+    "qa"
+]
+series = ["Kotlintest adoption"]
+aliases = ["kotlintest-pitfalls"]
+images = ["/images/sailing-ship.jpg"]
 +++
+
 _Common pitfalls and how to deal with them_
 
 {{< figure alt="Kotlintest mutiny - pirate skull inviting only true pirates" src="/images/pirates-only.jpg" caption="Photo by Mateusz Dach on Pexels" >}}

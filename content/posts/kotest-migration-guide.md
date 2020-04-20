@@ -1,7 +1,7 @@
 +++ 
-date = 2020-04-11
 title = "Kotest 4.0 migration guide"
 description = "What's changed in the new Kotest version"
+date = 2020-04-11
 tags = [
     "kotlintest",
     "kotest",
@@ -19,7 +19,7 @@ images = ["/images/man-on-mountain-road.jpg"]
 
 *What's changed in the new version*
 
-{{< figure alt="Migration to kotest - a man on mountain road riding a bike towards rising sun" src="/images/man-on-mountain-road.jpg" caption="Source: Pexels" >}}
+{{< figure alt="Migration to kotest - a man on mountain road riding a bike towards rising sun" src="/images/man-on-mountain-road.jpg" caption="Photo by Pixabay on Pexels" >}}
 
 ## Intro
 
@@ -33,7 +33,7 @@ Let's see what has been changed and what steps to take in order to make use of t
 The most obvious change in the library is its name. The name was changed to Kotest, 
 because of too much similarity with JetBrains kotlin.test package.
 
-I started the migration from updating project dependencies. Current version of the library is 4.0.2. 
+I started the migration from updating project dependencies. Current version of the library is 4.0.3. 
 In addition to changing group name and module name, I had to add one more dependency for core assertions. 
 Moreover, module names are suffixed with "-jvm".
 
