@@ -15,7 +15,7 @@ categories = [
 ## Intro
 
 During the years of experience with git I have noted aside many commands which could be useful.
-In this article I present the most frequently used git commands and also configuration steps I always follow in a new work environment.
+In this short article I present the most frequently used git commands and configuration steps I always follow in a new work environment.
 
 ## Configuration
 
