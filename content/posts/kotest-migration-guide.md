@@ -1,14 +1,22 @@
 +++
-aliases = ["kotlintest-migration-guide"]
-categories = ["backend", "qa"]
-date = 2020-04-11T00:00:00Z
-description = "What's changed in the new Kotest version"
-images = ["/images/man-on-mountain-road.jpg"]
-series = ["Kotlintest adoption"]
-tags = ["kotlintest", "kotest", "kotlin", "jvm"]
 title = "Kotest 4.0 migration guide"
-
+description = "What's changed in the new Kotest version"
+date = 2020-04-11
+tags = [
+    "kotlintest",
+    "kotest",
+    "kotlin",
+    "jvm"
+]
+categories = [
+    "backend",
+    "qa"
+]
+series = ["Kotlintest adoption"]
+aliases = ["kotlintest-migration-guide"]
+images = ["/images/man-on-mountain-road.jpg"]
 +++
+
 _What's changed in the new version_
 
 {{< figure alt="Migration to Kotest - a man on mountain road riding a bike towards rising sun" src="/images/man-on-mountain-road.jpg" caption="Photo by Pixabay on Pexels" >}}
