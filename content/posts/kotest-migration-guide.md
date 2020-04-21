@@ -23,7 +23,7 @@ _What's changed in the new version_
 
 ## Intro
 
-In the \[Kotlintest adventures\]({{< ref "posts/kotlintest-adventures.md" >}}) post
+In the [Kotlintest adventures]({{< ref "posts/kotlintest-adventures.md" >}}) post
 I described how my team solved different issues faced while implementing test cases in Kotlintest,
 the testing library for Kotlin. Recently there was a major release of that library.
 Let's see what has been changed and what steps to take in order to make use of the newest version of the library.
@@ -60,7 +60,7 @@ Instead of having project config in `io.kotlintest.provided` we can now create a
 
 ## Last but not least
 
-Finally, I needed to update the Kotlin language version. There was problem in the runtime. Definition of class `kotlin.time.MonotonicTimeSource` could not be found. Kotest is using experimental Kotlin features for profiling and measuring the time of test execution. I updated to the latest version of Kotlin language, and it fixed the issue.
+Finally, I needed to update the Kotlin language version. There was a problem in the runtime. The definition of the class `kotlin.time.MonotonicTimeSource` could not be found. Kotest is using experimental Kotlin features for profiling and measuring the time of test execution. I updated to the latest version of Kotlin language, and it fixed the issue.
 
 ## What about fixes?
 
