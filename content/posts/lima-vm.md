@@ -1,5 +1,4 @@
 +++
-draft = true
 date = 2022-08-22T21:50:30+02:00
 title = "Lima quick-start"
 description = "When you need Docker Desktop alternative"
