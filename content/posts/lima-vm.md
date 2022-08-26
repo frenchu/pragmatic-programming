@@ -74,7 +74,7 @@ You can also start lima passing `name` parameter.
 limactl start --name=default template://docker
 ```
 
-By default, the name of the VM instance is the same as template name or name of local file without `.yaml` extensions. [TBC]
+By default, the name of the VM instance is the same as template name or name of local file without `.yaml` extensions.
 
 To stop and delete instance, refer to its name.
 
