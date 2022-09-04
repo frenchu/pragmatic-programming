@@ -16,37 +16,43 @@ categories = ["devops", "cloud"]
 {
   type: 'bar',
   data: {
-    labels: ['Compressing', 'Decompressing', 'Overall'],
+    labels: [ 'Compressing', 'Decompressing', 'Overall' ],
     datasets: [
       {
         label: 'DigitalOcean',
         data: [ 11529, 11258, 11393 ],
-        borderColor: Utils.CHART_COLORS.blue,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.6)'
       },
       {
         label: 'Linode',
         data: [ 9738, 11948, 10843],
-        borderColor: Utils.CHART_COLORS.red,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.6)'
       },
       {
         label: 'Vultr',
         data: [ 16615, 14181, 15398 ],
-        borderColor: Utils.CHART_COLORS.yellow,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.yellow, 0.5),
+        borderColor: 'rgba(255, 206, 86, 1)',
+        backgroundColor: 'rgba(255, 206, 86, 0.6)'
       },
       {
         label: 'UpCloud',
         data: [ 16503, 14521, 15512 ],
-        borderColor: Utils.CHART_COLORS.green,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.green, 0.5),
+        borderWidth: 2,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.6)'
       }
     ]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
+    datasets: {
+      bar: {
+        borderWidth: 2
+      }
+    },
     scales: {
       y: {
         title: {
