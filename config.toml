@@ -1,4 +1,4 @@
-theme = "hugo-coder"
+theme = ["hugo-chart", "hugo-coder"]
 baseURL = "https://pawelweselak.com/"
 title = "Pragmatic Programming"
 paginate = 20
@@ -12,6 +12,7 @@ enableEmoji = true
 footnoteReturnLinkContents = "^"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+pygmentsCodeFencesGuessSyntax = true
 disqusShortName = "pragmatic-programming"
 
 [outputs]
@@ -46,66 +47,63 @@ disqusShortName = "pragmatic-programming"
     # "dark" (dark background, light foreground)
     # "light" (light background, dark foreground) (default)
     colorScheme = "auto"
+    hideColorSchemeToggle = false
 
     # Series see also post count
     maxSeeAlsoItems = 5
 
-    [[params.social]]
-        name = "Github"
-        icon = "fab fa-github"
-        weight = 1
-        url = "https://github.com/frenchu"
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/frenchu"
 
-    [[params.social]]
-        name = "Stackoverflow"
-        icon = "fab fa-stack-overflow"
-        weight = 2
-        url = "https://stackoverflow.com/users/4871030/frenchu"
+[[params.social]]
+    name = "Stackoverflow"
+    icon = "fab fa-stack-overflow"
+    weight = 2
+    url = "https://stackoverflow.com/users/4871030/frenchu"
 
-    [[params.social]]
-        name = "LinkedIn"
-        icon = "fab fa-linkedin"
-        weight = 3
-        url = "https://www.linkedin.com/in/pawel-weselak/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 3
+    url = "https://www.linkedin.com/in/pawel-weselak/"
 
-    [[params.social]]
-        name = "Twitter"
-        icon = "fab fa-twitter"
-        weight = 4
-        url = "https://twitter.com/frenchu85"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 4
+    url = "https://twitter.com/frenchu85"
 
-[menu]
+# Menu links
+[[menu.main]]
+    name = "About"
+    weight = 1
+    url = "about/"
 
-    [[menu.main]]
-        name = "About"
-        weight = 1
-        url = "about/"
+[[menu.main]]
+    name = "Projects"
+    weight = 2
+    url = "projects/"
 
-    [[menu.main]]
-        name = "Projects"
-        weight = 2
-        url = "projects/"
+[[menu.main]]
+    name = "Posts"
+    weight = 3
+    url = "posts/"
 
-    [[menu.main]]
-        name = "Posts"
-        weight = 3
-        url = "posts/"
+[[menu.main]]
+    name = "Categories"
+    weight = 4
+    url = "categories/"
 
-    [[menu.main]]
-        name = "Categories"
-        weight = 4
-        url = "categories/"
+[[menu.main]]
+    name = "Tags"
+    weight = 5
+    url = "tags/"
 
-    [[menu.main]]
-        name = "Tags"
-        weight = 5
-        url = "tags/"
-
-    [[menu.main]]
-        name = "Search"
-        weight = 6
-        url = "search/"
-
+# Privacy settings
 [privacy]
 
   [privacy.disqus]
