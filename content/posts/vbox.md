@@ -16,7 +16,7 @@ images = ["/images/boxes.jpg"]
 ## Networking in VirtualBox
 
 There are several modes one can use for networking in VirtualBox. In this article I presented one way for network setup.
-VMs talk each other using internal network separated from host. Additionaly, I created OpnSense router to access VMs in internal network.
+VMs talk each other using internal network separated from the host machine. Additionaly, I created OpnSense router to access VMs in internal network from the host.
 
 To quickly spin desired number of VMs I used VBoxManage CLI utility and Ubuntu VBox cloud image.
 
