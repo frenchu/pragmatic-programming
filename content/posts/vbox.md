@@ -67,7 +67,7 @@ VBoxManage storageattach my-vm --storagectl IDE --port 0 --device 0 --type dvddr
 
 The could-init configuration is read from previously created ISO image mounted as DVD-ROM in VM.
 
-### Attach VM to internal network
+### Attach VM to the internal network
 
 ```shell
 VBoxManage modifyvm my-vm --nic1 intnet --intnet1 my-intnet --nictype1 virtio --nic-promisc1 allow-vms
@@ -77,9 +77,10 @@ VirtIO network interface is selected, which gives more performant network commun
 
 ## Summary
 
-There are bash scripts available on my [github](github.com/frenchu/vbox-vm-setup), which can simplify the process of creating the VMs.
+There are bash scripts available on my [github](https://github.com/frenchu/vbox-vm-setup), which can simplify the process of creating the VMs.
 
 ## References
 
 * [OpnSense in VirtualBox VM](https://techsphinx.com/hacking/install-opnsense-on-virtualbox/)
 * [Ubuntu cloud images](https://cloud-images.ubuntu.com/)
+* [Sample shell script](https://github.com/frenchu/vbox-vm-setup)
