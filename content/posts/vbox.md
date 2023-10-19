@@ -13,7 +13,9 @@ categories = [
 images = ["/images/boxes.jpg"]
 +++
 
-## Networking in VirtualBox
+_Networking in VirtualBox_
+
+{{< figure alt="Virtual Machines - wooden boxes on the ship" src="/images/boxes.jpg" caption="Photo by Pixabay on Pexels" >}}
 
 There are several modes one can use for networking in VirtualBox. In this article I presented one way for network setup.
 VMs talk each other using internal network separated from the host machine. Additionaly, I created OpnSense router to access VMs in internal network from the host.
