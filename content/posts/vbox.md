@@ -10,6 +10,7 @@ tags = [
 categories = [
     "devops"
 ]
+images = ["/images/boxes.jpg"]
 +++
 
 ## Networking in VirtualBox
@@ -43,13 +44,18 @@ echo "local-hostname: my-hostname" >> meta-data
 cloud-localds seed.iso user-data meta-data
 ```
 
-By default cloud-init configures first available network interface in VM to obtain IP address from DHCP. OpnSense provides DHCP and DNS services.
+To prepare seed.iso image, first `user-data` config file has to be created. `user-data` typically contains information about user accounts to be created and/or packages to be installed. For more information check cloud-init docs.
+
+By default cloud-init configures first available network interface in VM to obtain IP address from DHCP. OpnSense provides DHCP and DNS services. To distinguish VMs in the internal local network, change `my-hostname` in `meta-data` to unique name accross the internal network.
 
 ### Create VM from recent Ubuntu cloud image
 
 ```shell
 VBoxManage import jammy-server-cloudimg-amd64.ova --vsys 0 --vmname my-vm --cpus 2 --memory 2048 --unit 9 --ignore
 ```
+
+This command imports a new virtual machine from VirtualBox compatible image.
+The OVA Ubuntu image is available to download from [Ubuntu cloud images](https://cloud-images.ubuntu.com/) website.
 
 ### Provide cloud-init configuration to VM
 
@@ -69,8 +75,9 @@ VirtIO network interface is selected, which gives more performant network commun
 
 ## Summary
 
-There are bash scripts available on my [github](github.com/frenchu/vbox-vm-setup), which can simplify creating the VMs.
+There are bash scripts available on my [github](github.com/frenchu/vbox-vm-setup), which can simplify the process of creating the VMs.
 
 ## References
 
 * [OpnSense in VirtualBox VM](https://techsphinx.com/hacking/install-opnsense-on-virtualbox/)
+* [Ubuntu cloud images](https://cloud-images.ubuntu.com/)
