@@ -55,25 +55,25 @@ disqusShortName = "pragmatic-programming"
 # Social links
 [[params.social]]
     name = "Github"
-    icon = "fab fa-github"
+    icon = "fa-brands fa-github"
     weight = 1
     url = "https://github.com/frenchu"
 
 [[params.social]]
     name = "Stackoverflow"
-    icon = "fab fa-stack-overflow"
+    icon = "fa-brands fa-stack-overflow"
     weight = 2
     url = "https://stackoverflow.com/users/4871030/frenchu"
 
 [[params.social]]
     name = "LinkedIn"
-    icon = "fab fa-linkedin"
+    icon = "fa-brands fa-linkedin"
     weight = 3
     url = "https://www.linkedin.com/in/pawel-weselak/"
 
 [[params.social]]
     name = "Twitter"
-    icon = "fab fa-twitter"
+    icon = "fa-brands fa-twitter"
     weight = 4
     url = "https://twitter.com/frenchu85"
 
