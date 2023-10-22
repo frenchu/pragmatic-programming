@@ -13,14 +13,12 @@ categories = [
 images = ["/images/boxes.jpg"]
 +++
 
-_Networking in VirtualBox_
-
-{{< figure alt="Virtual Machines - wooden boxes on the ship" src="/images/boxes.jpg" caption="Photo by Pixabay on Pexels" >}}
-
 There are several modes one can use for networking in VirtualBox. In this article I presented one way for network setup.
 VMs talk each other using internal network separated from the host machine. Additionaly, I created OpnSense router to access VMs in internal network from the host.
 
 To quickly spin desired number of VMs I used VBoxManage CLI utility and Ubuntu VBox cloud image.
+
+{{< figure alt="Virtual Machines - wooden boxes on the ship" src="/images/boxes.jpg" caption="Networking in VirtualBox - Photo by Pixabay on Pexels" >}}
 
 ## Configuration steps
 
@@ -81,6 +79,7 @@ There are bash scripts available on my [github](https://github.com/frenchu/vbox-
 
 ## References
 
+* [Networking modes in VirtualBox](https://www.nakivo.com/blog/virtualbox-network-setting-guide/)
 * [OpnSense in VirtualBox VM](https://techsphinx.com/hacking/install-opnsense-on-virtualbox/)
 * [Ubuntu cloud images](https://cloud-images.ubuntu.com/)
-* [Sample shell script](https://github.com/frenchu/vbox-vm-setup)
+* [VM create shell script](https://github.com/frenchu/vbox-vm-setup)
