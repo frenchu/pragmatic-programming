@@ -1,6 +1,8 @@
 [submodule "hugo-coder"]
 	path = themes/hugo-coder
 	url = git@github.com:luizdepra/hugo-coder.git
+	branch = main
 [submodule "hugo-chart"]
 	path = themes/hugo-chart
 	url = git@github.com:Shen-Yu/hugo-chart.git
+	branch = master
