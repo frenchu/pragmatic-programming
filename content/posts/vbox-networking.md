@@ -46,6 +46,8 @@ cloud-localds seed.iso user-data meta-data
 
 To prepare seed.iso image, first `user-data` config file has to be created. `user-data` typically contains information about user accounts to be created and/or packages to be installed. For more information check cloud-init docs.
 
+`cloud-localds` tool can be installed with `apt install cloud-image-utils` on Ubuntu.
+
 By default cloud-init configures first available network interface in VM to obtain IP address from DHCP. OpnSense provides DHCP and DNS services. To distinguish VMs in the internal local network, change `my-hostname` in `meta-data` to unique name accross the internal network.
 
 ### Create VM from recent Ubuntu cloud image
