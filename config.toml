@@ -1,4 +1,4 @@
-theme = ["hugo-chart", "hugo-coder"]
+theme = ["hugo-coder"]
 baseURL = "https://pawelweselak.com/"
 title = "Pragmatic Programming"
 paginate = 20
