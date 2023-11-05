@@ -65,8 +65,8 @@ For seeting up a cellurar networking NetworkManager and ModemManager services wi
 Although, they should be installed and enabled by default in the newest RPi OS. You can verify it with:
 
 ```shell
-sudo systemctl NetworkManager status
-sudo systemctl ModemManager status
+sudo systemctl status NetworkManager
+sudo systemctl status ModemManager
 ```
 
 ## Configuring modem connection and routing
