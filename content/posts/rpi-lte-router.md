@@ -13,6 +13,7 @@ categories = [
 series = [
   "RaspberryPi"
 ]
+images = ["/images/telephone.jpg"]
 +++
 
 I finally managed to find some free time to take a look on Waveshare SIM7600E-H 4G HAT.
