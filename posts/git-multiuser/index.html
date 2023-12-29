@@ -3,18 +3,18 @@
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/about/>About</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/projects/>Projects</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/posts/>Posts</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/categories/>Categories</a></li><li class=navigation-item><a class=navigation-link href=https://pawelweselak.com/tags/>Tags</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://pawelweselak.com/posts/git-multiuser/>Multiple SSH keys setup for git</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2023-12-22T00:00:00Z>December 22, 2023</time></span>
 <span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-4-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
+5-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
 <a href=https://pawelweselak.com/categories/tools/>tools</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
 <span class=tag><a href=https://pawelweselak.com/tags/git/>git</a></span>
 <span class=separator>•</span>
 <span class=tag><a href=https://pawelweselak.com/tags/github/>github</a></span>
 <span class=separator>•</span>
 <span class=tag><a href=https://pawelweselak.com/tags/ssh/>ssh</a></span></div></div></header><div class=post-content><p>I always configure git to use SSH for connection. And I don&rsquo;t share private keys among instances. I belive this is the best practice.</p><p>As a contractor, I need to perform my work duties on my personal equipment from time to time.
-Organisation, I work for, hosts its repositories on github.com.</p><p>GitHub in its <a href=https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/merging-multiple-personal-accounts class=external-link target=_blank rel=noopener>official docs</a> encourage users to use the same personal account for both private use and when working for an organisation.
+Organisations quite often hosts its repositories on <a href=https://github.com/ class=external-link target=_blank rel=noopener>github.com</a>.</p><p>GitHub in its <a href=https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/merging-multiple-personal-accounts class=external-link target=_blank rel=noopener>official docs</a> encourage users to use the same personal account for both private use and when working for an organisation.
 However, quite often I want or even have to seperate work account and private one from each other.</p><p>The thing is I can&rsquo;t upload the same key for two different user accounts in GitHub.
 It makes sense because GitHub identifies a user by SSH key, so the keys has to be unique.
-It is also true for other similar services like BitBucket.</p><p>I have to generate two keys in this case - one for work account and another for private account.
-It causing some difficultiues while working with git. I need to tell git somehow which key I want to use at the moment.</p><p>Below I described how to configure git to juggle SSH keys with an ease.</p><figure><img src=https://pawelweselak.com/images/git.jpg alt="Git - files of office paper"><figcaption><p>Git repository</p></figcaption></figure><h2 id=inline-git-command-configuration>Inline git command configuration
+It is also true for other similar services like BitBucket.</p><p>I have to generate two keys on my personal workstation in this case - one for work account and another for private account.
+It causing some difficulties while working with git. I need to tell git somehow which key I want to use at the moment.</p><p>Below I described how to configure git to juggle SSH keys with an ease.</p><figure><img src=https://pawelweselak.com/images/git.jpg alt="Git - files of office paper"><figcaption><p>Git repository</p></figcaption></figure><h2 id=inline-git-command-configuration>Inline git command configuration
 <a class=heading-link href=#inline-git-command-configuration><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>The simplest way is to inline a configuration parameter when executing git command.
 This parameter changes default command for SSH and can be used to pass custom key file path.</p><p>You can use environment variable</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=nv>GIT_SSH_COMMAND</span><span class=o>=</span><span class=s2>&#34;ssh -i /path/to/key&#34;</span> git pull
@@ -30,7 +30,7 @@ This parameter changes default command for SSH and can be used to pass custom ke
 </span></span><span class=line><span class=cl>[includeIf &#34;gitdir:~/devel/work/&#34;]
 </span></span><span class=line><span class=cl>    path = ~/devel/work/.gitconfig
 </span></span></code></pre></div><p>This will tell git to use additional configuration for repos stored in <code>~/devel/work/</code> directory.</p><p>It will take additional config from <code>~/devel/work/.gitconfig</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[core]
-</span></span><span class=line><span class=cl>    sshCommand = &#34;ssh -i ~/.ssh/id_ed25519_work&#34;
+</span></span><span class=line><span class=cl>    sshCommand = &#34;ssh -i /path/to/key&#34;
 </span></span><span class=line><span class=cl>[user]
 </span></span><span class=line><span class=cl>    email = pawel.weselak@example.com
 </span></span></code></pre></div><p>To verify how new setup works execute command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>git config --show-origin --get user.email
@@ -83,4 +83,4 @@ You can not only apply different SSH keys, but also for instance sign commits wi
 Paweł Weselak
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.
-[<a href=https://github.com/frenchu/pragmatic-programming/tree/23736ff0bad4efa89c3e337ebb61346fa1393441 target=_blank rel=noopener>23736ff</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
+[<a href=https://github.com/frenchu/pragmatic-programming/tree/98495b0c678afb5b36acc3e19626c2a9006a5b6e target=_blank rel=noopener>98495b0</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
