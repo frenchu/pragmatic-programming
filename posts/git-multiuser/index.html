@@ -25,57 +25,62 @@ This parameter changes default command for SSH and can be used to pass custom ke
 </span></span></code></pre></div><h2 id=includeif-directive-with-gitdir>IncludeIf directive with gitdir
 <a class=heading-link href=#includeif-directive-with-gitdir><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>This setup is more complex, but on the other hand you don&rsquo;t need to set any variable each time you need to switch or remember to use alias.</p><p>If you have a clean separation between work and private projects on the directory level, you can go with this setup.</p><p>Firt edit your <code>~/.gitconfig</code> file to add <code>includeIf</code> directive:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
-</span></span><span class=line><span class=cl>    name = frenchu
-</span></span><span class=line><span class=cl>    email = frenchu@pawelweselak.com
+</span></span><span class=line><span class=cl>    name = &#34;Pawel Weselak&#34;
+</span></span><span class=line><span class=cl>    email = priv@pawelweselak.com
 </span></span><span class=line><span class=cl>[includeIf &#34;gitdir:~/devel/work/&#34;]
 </span></span><span class=line><span class=cl>    path = ~/devel/work/.gitconfig
 </span></span></code></pre></div><p>This will tell git to use additional configuration for repos stored in <code>~/devel/work/</code> directory.</p><p>It will take additional config from <code>~/devel/work/.gitconfig</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[core]
 </span></span><span class=line><span class=cl>    sshCommand = &#34;ssh -i ~/.ssh/id_ed25519_work&#34;
 </span></span><span class=line><span class=cl>[user]
-</span></span><span class=line><span class=cl>    name = &#34;Pawel Weselak&#34;
 </span></span><span class=line><span class=cl>    email = pawel.weselak@example.com
 </span></span></code></pre></div><p>To verify how new setup works execute command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>git config --show-origin --get user.email
 </span></span></code></pre></div><p>It should provide different outputs depending on location of the repo inside or outside <code>~/devel/work/</code> directory.</p><p>The problem with this configuration is it won&rsquo;t work when you want to clone a new repository.
 It&rsquo;s because <code>~/devel/work/</code> directory has to be an existing git repository.</p><p>You can do <code>git init</code> under <code>~/devel/work/</code> to create a dummy repo, but it would be rather artificial and hacky.</p><p>Execute test commands below, to have a better understanding of the problem.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&gt; cd
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
+</span></span><span class=line><span class=cl>file:/home/pweselak/.gitconfig priv@pawelweselak.com
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>&gt; cd ~/devel/work/
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
+</span></span><span class=line><span class=cl>file:/home/pweselak/.gitconfig priv@pawelweselak.com
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>&gt; mkdir test_repo &amp;&amp; cd test_repo
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
+</span></span><span class=line><span class=cl>file:/home/pweselak/.gitconfig priv@pawelweselak.com
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>&gt; git init
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
+</span></span><span class=line><span class=cl>file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
 </span></span></code></pre></div><p>You can see that only after repo initialisation a new config is applied.
 Executing <code>git config</code> with <code>--show-origin</code> provides an information where the config comes from.</p><h2 id=includeif-directive-with-hasremote>IncludeIf directive with hasremote
 <a class=heading-link href=#includeif-directive-with-hasremote><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>After digging in git documentation and doing some tests, I&rsquo;ve found the way how to overcome difficulty described above.</p><p>We can use <code>hasconfig:remote</code> in <code>includeIf</code> directive. Take a look on <code>~/.gitconfig</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
-</span></span><span class=line><span class=cl>    name = frenchu
-</span></span><span class=line><span class=cl>    email = frenchu@pawelweselak.com
-</span></span><span class=line><span class=cl>[includeIf &#34;hasconfig:remote.*.url:git@github.com:gohugoio/**&#34;]
+</span></span><span class=line><span class=cl>    name = &#34;Pawel Weselak&#34;
+</span></span><span class=line><span class=cl>    email = priv@pawelweselak.com
+</span></span><span class=line><span class=cl>[includeIf &#34;hasconfig:remote.*.url:git@github.com:WorkOrg/**&#34;]
 </span></span><span class=line><span class=cl>    path = ~/devel/work/.gitconfig
-</span></span></code></pre></div><p>Contents of <code>~/devel/work/.gitconfig</code> remains the same.</p><p>Now all repos cloned from <code>frenchu</code> account on GitHub will use different configuration.
+</span></span></code></pre></div><p>Contents of <code>~/devel/work/.gitconfig</code> remains the same.</p><p>Now all repos cloned from <code>WorkOrg</code> account/organisation on GitHub will use different configuration.
 The best thing is when git clones the repo, it initialises the repo config with remote url and
 only then the custom configuration is applied. So when the repo is fetched the right ssh key is used.
 Thanks to that the <code>git clone</code> works smoothly.</p><p>In addition to that, you don&rsquo;t need to keep you directory structure neat and tidy.
 The glob pattern in the remote url can be customized and more complex.</p><p>You can execute test commands, to check how git behaves now.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&gt; git clone git@github.com:frenchu/hello-world.git
-</span></span><span class=line><span class=cl>&gt; cd hello
+</span></span><span class=line><span class=cl>&gt; cd sample-repo
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
+</span></span><span class=line><span class=cl>file:/home/pweselak/.gitconfig priv@pawelweselak.com
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>&gt; cd ..
-</span></span><span class=line><span class=cl>&gt; git clone git@github.com:gohugoio/hugo.git
-</span></span><span class=line><span class=cl>&gt; cd hugo
+</span></span><span class=line><span class=cl>&gt; git clone git@github.com:WorkOrg/sample-repo.git
+</span></span><span class=line><span class=cl>&gt; cd sample-repo
 </span></span><span class=line><span class=cl>&gt; git config --show-origin --get user.email
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>## Web resources
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>* [Conditional includes, Git documentation](https://git-scm.com/docs/git-config#_conditional_includes)
-</span></span><span class=line><span class=cl>* [Multiple SSH Keys settings for different github account Gist](https://gist.github.com/jexchan/2351996)
-</span></span></code></pre></div></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//pragmatic-programming.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
+</span></span><span class=line><span class=cl>file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
+</span></span></code></pre></div><p>One caveat of <code>hasconfig</code> is that you need to have quite recent git installed, version 2.36.0 or above.</p><h2 id=final-conclusions>Final conclusions
+<a class=heading-link href=#final-conclusions><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Presented three methods of configuring git may be useful also in other scenarios.
+You can not only apply different SSH keys, but also for instance sign commits with separate PGP signatures.</p><p>Leave your ideas in the comments section.</p><h2 id=web-resources>Web resources
+<a class=heading-link href=#web-resources><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ul><li><a href=https://git-scm.com/docs/git-config#_conditional_includes class=external-link target=_blank rel=noopener>Conditional includes, Git documentation</a></li><li><a href=https://gist.github.com/jexchan/2351996 class=external-link target=_blank rel=noopener>Multiple SSH Keys settings for different github account Gist</a></li></ul></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//pragmatic-programming.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
 2010 -
 2023
 Paweł Weselak
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.
-[<a href=https://github.com/frenchu/pragmatic-programming/tree/dc56ff9104c90755b8b0b1923a18dd2b4605e65e target=_blank rel=noopener>dc56ff9</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
+[<a href=https://github.com/frenchu/pragmatic-programming/tree/23736ff0bad4efa89c3e337ebb61346fa1393441 target=_blank rel=noopener>23736ff</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
