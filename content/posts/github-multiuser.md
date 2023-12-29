@@ -4,10 +4,10 @@ publishDate = 2023-12-27
 title = "Multiple SSH keys setup for git"
 description = "Using two GitHub accounts on the same workstation efectively"
 tags = [
-  "tools"
+  "git", "github", "ssh"
 ]
 categories = [
-  "git"
+  "tools"
 ]
 images = ["/images/git.jpg"]
 +++
@@ -15,17 +15,17 @@ images = ["/images/git.jpg"]
 I always configure git to use SSH for connection. And I don't share private keys among instances. I belive this is the best practice.
 
 As a contractor, I need to perform my work duties on my personal equipment from time to time.
-Organisation, I work for, hosts its repositories on github.com.
+Organisations quite often hosts its repositories on [github.com](https://github.com/).
 
-GitHub in its [official docs]() encourage users to use the same personal account for both private use and when working for an organisation.
+GitHub in its [official docs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/merging-multiple-personal-accounts) encourage users to use the same personal account for both private use and when working for an organisation.
 However, quite often I want or even have to seperate work account and private one from each other.
 
 The thing is I can't upload the same key for two different user accounts in GitHub.
 It makes sense because GitHub identifies a user by SSH key, so the keys has to be unique.
 It is also true for other similar services like BitBucket.
 
-I have to generate two keys in this case - one for work account and another for private account.
-It causing some difficultiues while working with git. I need to tell git somehow which key I want to use at the moment. 
+I have to generate two keys on my personal workstation in this case - one for work account and another for private account.
+It causing some difficulties while working with git. I need to tell git somehow which key I want to use at the moment. 
 
 Below I described how to configure git to juggle SSH keys with an ease.
 
@@ -79,8 +79,8 @@ Firt edit your `~/.gitconfig` file to add `includeIf` directive:
 
 ```
 [user]
-    name = frenchu
-    email = frenchu@pawelweselak.com
+    name = "Pawel Weselak"
+    email = priv@pawelweselak.com
 [includeIf "gitdir:~/devel/work/"]
     path = ~/devel/work/.gitconfig
 ```
@@ -91,9 +91,8 @@ It will take additional config from `~/devel/work/.gitconfig`:
 
 ```
 [core]
-    sshCommand = "ssh -i ~/.ssh/id_ed25519_work"
+    sshCommand = "ssh -i /path/to/key"
 [user]
-    name = "Pawel Weselak"
     email = pawel.weselak@example.com
 ```
 
@@ -115,15 +114,19 @@ Execute test commands below, to have a better understanding of the problem.
 ```
 > cd
 > git config --show-origin --get user.email
+file:/home/pweselak/.gitconfig priv@pawelweselak.com
 
 > cd ~/devel/work/
 > git config --show-origin --get user.email
+file:/home/pweselak/.gitconfig priv@pawelweselak.com
 
 > mkdir test_repo && cd test_repo
 > git config --show-origin --get user.email
+file:/home/pweselak/.gitconfig priv@pawelweselak.com
 
 > git init
 > git config --show-origin --get user.email
+file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
 ```
 
 You can see that only after repo initialisation a new config is applied.
@@ -137,15 +140,15 @@ We can use `hasconfig:remote` in `includeIf` directive. Take a look on `~/.gitco
 
 ```
 [user]
-    name = frenchu
-    email = frenchu@pawelweselak.com
-[includeIf "hasconfig:remote.*.url:git@github.com:gohugoio/**"]
+    name = "Pawel Weselak"
+    email = priv@pawelweselak.com
+[includeIf "hasconfig:remote.*.url:git@github.com:WorkOrg/**"]
     path = ~/devel/work/.gitconfig
 ```
 
 Contents of `~/devel/work/.gitconfig` remains the same.
 
-Now all repos cloned from `frenchu` account on GitHub will use different configuration.
+Now all repos cloned from `WorkOrg` account/organisation on GitHub will use different configuration.
 The best thing is when git clones the repo, it initialises the repo config with remote url and 
 only then the custom configuration is applied. So when the repo is fetched the right ssh key is used.
 Thanks to that the `git clone` works smoothly.
@@ -157,15 +160,27 @@ You can execute test commands, to check how git behaves now.
 
 ```
 > git clone git@github.com:frenchu/hello-world.git
-> cd hello
+> cd sample-repo
 > git config --show-origin --get user.email
+file:/home/pweselak/.gitconfig priv@pawelweselak.com
 
 > cd ..
-> git clone git@github.com:gohugoio/hugo.git
-> cd hugo
+> git clone git@github.com:WorkOrg/sample-repo.git
+> cd sample-repo
 > git config --show-origin --get user.email
+file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
+```
+
+One caveat of `hasconfig` is that you need to have quite recent git installed, version 2.36.0 or above.
+
+## Final conclusions
+
+Presented three methods of configuring git may be useful also in other scenarios.
+You can not only apply different SSH keys, but also for instance sign commits with separate PGP signatures.
+
+Leave your ideas in the comments section.
 
 ## Web resources
 
-* https://git-scm.com/docs/git-config#_conditional_includes
-* https://gist.github.com/jexchan/2351996
+* [Conditional includes, Git documentation](https://git-scm.com/docs/git-config#_conditional_includes)
+* [Multiple SSH Keys settings for different github account Gist](https://gist.github.com/jexchan/2351996)
