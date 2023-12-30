@@ -4,11 +4,12 @@ publishDate = 2023-11-04
 title = "LTE router on Raspberry Pi"
 description = "Configuring cellurar networking with Waveshare GSM hat"
 tags = [
-  "hardware",
-  "networking"
+  "IoT",
+  "networking",
+  "admin"
 ]
 categories = [
-  "IoT"
+  "hardware"
 ]
 series = [
   "RaspberryPi"

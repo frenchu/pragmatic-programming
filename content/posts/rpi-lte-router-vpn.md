@@ -4,11 +4,13 @@ publishDate = 2023-11-17
 title = "VPN with nmcli on Raspberry Pi"
 description = "Configuring Raspberry Pi networking with VPN"
 tags = [
-  "hardware",
-  "networking"
+  "IoT",
+  "networking",
+  "VPN",
+  "admin"
 ]
 categories = [
-  "IoT"
+  "hardware"
 ]
 series = [
   "RaspberryPi"
@@ -29,7 +31,7 @@ In this article I will show how to enable VPN connection over cellurar connectio
 Again, I will give a recipe for NetworkManager and nmcli setup.
 These tools will manage openvpn client connection for us.
 
-{{< figure alt="VPN - secure shield" src="/images/vpn.jpg" caption="Virtual Private Networking" >}}
+{{< figure alt="Shield as a part of armor" src="/images/vpn.jpg" caption="Virtual Private Networking" >}}
 
 ## OVPN configuration file
 
