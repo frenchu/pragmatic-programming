@@ -34,7 +34,7 @@ Below I described how to configure git to juggle SSH keys with an ease.
 ## Inline git command configuration
 
 The simplest way is to inline a configuration parameter when executing git command.
-This parameter changes default command for SSH and can be used to pass custom key file path. 
+The parameter can change default command for SSH to pass custom key file path. 
 
 
 You can use environment variable
@@ -49,15 +49,16 @@ or command line parameter
 git -c core.sshCommand="ssh -i /path/to/key" git pull
 ```
 
-If you want to switch from 'home' mode to 'work' mode and use other key, you can export varibale for a terminal session
+If you want to switch from 'home' mode to 'work' mode for the whole terminal session, 
+you can export the varibale
 
 ```shell
 export GIT_SSH_COMMAND="ssh -i /path/to/key"
 ```
 
-and it an other key will be used with subsequent github commands.
+and the other key will be used with subsequent github commands.
 
-Or you can set up a bash alias, something like:
+Or you can set up a bash alias, something like
 
 ```shell
 alias gitw 'git -c core.sshCommand="ssh -i /path/to/key"'
@@ -73,9 +74,9 @@ gitw pull
 
 This setup is more complex, but on the other hand you don't need to set any variable each time you need to switch or remember to use alias.
 
-If you have a clean separation between work and private projects on the directory level, you can go with this setup.
+If you have a clean separation between work and private projects on the directory structure level, you can go with this setup.
 
-Firt edit your `~/.gitconfig` file to add `includeIf` directive:
+First edit your `~/.gitconfig` file to add `includeIf` directive:
 
 ```
 [user]
@@ -87,7 +88,11 @@ Firt edit your `~/.gitconfig` file to add `includeIf` directive:
 
 This will tell git to use additional configuration for repos stored in `~/devel/work/` directory.
 
-It will take additional config from `~/devel/work/.gitconfig`:
+It will take additional config from `~/devel/work/.gitconfig`.
+The path of the included config file can be freely changed.
+If you use relative path, it will be relative to the location of `.gitconfig`.
+
+In the included file change SSH command and let's say email:
 
 ```
 [core]
@@ -102,10 +107,10 @@ To verify how new setup works execute command:
 git config --show-origin --get user.email
 ```
 
-It should provide different outputs depending on location of the repo inside or outside `~/devel/work/` directory.
+It should provide different outputs depending on the location of the repo inside or outside `~/devel/work/` directory.
 
-The problem with this configuration is it won't work when you want to clone a new repository.
-It's because `~/devel/work/` directory has to be an existing git repository.
+The problem with this configuration is that it won't work when you want to clone a new repository.
+It's because directories under `~/devel/work/` or the directory itself have to be an existing git repositories.
 
 You can do `git init` under `~/devel/work/` to create a dummy repo, but it would be rather artificial and hacky.
 
@@ -129,14 +134,14 @@ file:/home/pweselak/.gitconfig priv@pawelweselak.com
 file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
 ```
 
-You can see that only after repo initialisation a new config is applied.
+You can see that only after repo initialisation a new config has been applied.
 Executing `git config` with `--show-origin` provides an information where the config comes from.
 
-## IncludeIf directive with hasremote
+## IncludeIf directive with hasconfig
 
 After digging in git documentation and doing some tests, I've found the way how to overcome difficulty described above.
 
-We can use `hasconfig:remote` in `includeIf` directive. Take a look on `~/.gitconfig`:
+We can use `hasconfig:remote` in `includeIf` directive. Take a look on my `~/.gitconfig`:
 
 ```
 [user]
@@ -153,7 +158,7 @@ The best thing is when git clones the repo, it initialises the repo config with 
 only then the custom configuration is applied. So when the repo is fetched the right ssh key is used.
 Thanks to that the `git clone` works smoothly.
 
-In addition to that, you don't need to keep you directory structure neat and tidy.
+In addition to that, you don't need to keep your directory structure neat and tidy.
 The glob pattern in the remote url can be customized and more complex.
 
 You can execute test commands, to check how git behaves now.
@@ -171,14 +176,16 @@ file:/home/pweselak/.gitconfig priv@pawelweselak.com
 file:/home/pweselak/devel/work/.gitconfig pawel.weselak@example.com
 ```
 
-One caveat of `hasconfig` is that you need to have quite recent git installed, version 2.36.0 or above.
+One caveat of `hasconfig` is that you need to have quite recent version of git installed - 2.36.0 or above.
 
 ## Final conclusions
 
 Presented three methods of configuring git may be useful also in other scenarios.
 You can not only apply different SSH keys, but also for instance sign commits with separate PGP signatures.
 
-Leave your ideas in the comments section.
+Leave your ideas in the comments section below.
+
+Happy hacking!
 
 ## Web resources
 
