@@ -9,6 +9,9 @@ tags = [
 categories = [
   "tools"
 ]
+series = [
+  "git"
+]
 images = ["/images/git.jpg"]
 +++
 

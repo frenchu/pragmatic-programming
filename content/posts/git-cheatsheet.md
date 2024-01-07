@@ -10,6 +10,9 @@ tags = [
 categories = [
     "tools"
 ]
+series = [
+    "git"
+]
 +++
 
 ## Intro
