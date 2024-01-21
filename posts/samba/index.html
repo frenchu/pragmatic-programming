@@ -13,29 +13,29 @@ One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-h
 <span class=separator>•</span>
 <span class=tag><a href=https://pawelweselak.com/tags/admin/>admin</a></span></div></div></header><div class=post-content><figure><img src=https://pawelweselak.com/images/samba.jpg alt="Samba - carnival in Brasil"><figcaption><p>Samba</p></figcaption></figure><h2 id=install-samba>Install samba
 <a class=heading-link href=#install-samba><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo apt update
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt update
 </span></span><span class=line><span class=cl>sudo apt install samba
-</span></span></code></pre></div><h2 id=add-samba-user-for-you>Add samba user for you
-<a class=heading-link href=#add-samba-user-for-you><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo smbpasswd -a $USER
-</span></span><span class=line><span class=cl>sudo usermod -a -G sambashare $USER
-</span></span><span class=line><span class=cl>net usershare add priv ~/Documents/priv &#34;My Documents&#34; $USER:f,everyone:d guest_ok=n
+</span></span></code></pre></div><h2 id=add-samba-user-for-yourself>Add samba user for yourself
+<a class=heading-link href=#add-samba-user-for-yourself><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo smbpasswd -a <span class=nv>$USER</span>
+</span></span><span class=line><span class=cl>sudo usermod -a -G sambashare <span class=nv>$USER</span>
+</span></span><span class=line><span class=cl>net usershare add priv ~/Documents/priv <span class=s2>&#34;My Documents&#34;</span> <span class=nv>$USER</span>:f,everyone:d <span class=nv>guest_ok</span><span class=o>=</span>n
 </span></span></code></pre></div><h2 id=edit-config>Edit config
 <a class=heading-link href=#edit-config><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>cat /etc/samba/smb.conf
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo nano /etc/samba/smb.conf
 </span></span><span class=line><span class=cl>sudo service smbd restart
 </span></span></code></pre></div><h2 id=add-accounts-for-others>Add accounts for others
 <a class=heading-link href=#add-accounts-for-others><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo useradd -M -G sambashare karen
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo useradd -M -G sambashare karen
 </span></span><span class=line><span class=cl>sudo passwd -l karen
-</span></span><span class=line><span class=cl>net usershare add documents ~/Documents/shared &#34;Shared Documents&#34; $USER:f,karen:f,everyone:d guest_ok=n
+</span></span><span class=line><span class=cl>net usershare add documents ~/Documents/shared <span class=s2>&#34;Shared Documents&#34;</span> <span class=nv>$USER</span>:f,karen:f,everyone:d <span class=nv>guest_ok</span><span class=o>=</span>n
 </span></span></code></pre></div><h2 id=verify-users-and-shares>Verify users and shares
 <a class=heading-link href=#verify-users-and-shares><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo pdbedit -L -v
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo pdbedit -L -v
 </span></span><span class=line><span class=cl>net usershare info --long
 </span></span></code></pre></div><h2 id=configure-firewall>Configure firewall
 <a class=heading-link href=#configure-firewall><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sudo ufw allow from 192.168.10.0/24 to any app samba
+<span class=sr-only>Link to heading</span></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo ufw allow from 192.168.10.0/24 to any app samba
 </span></span><span class=line><span class=cl>sudo ufw reload
 </span></span></code></pre></div></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//pragmatic-programming.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
 2010 -
@@ -43,4 +43,4 @@ One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-h
 Paweł Weselak
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.
-[<a href=https://github.com/frenchu/pragmatic-programming/tree/4815e47800dd602071588a9ee38d686ba76107aa target=_blank rel=noopener>4815e47</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
+[<a href=https://github.com/frenchu/pragmatic-programming/tree/a5bda553736c044cad05b0a1d037881aa949e578 target=_blank rel=noopener>a5bda55</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
