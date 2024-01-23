@@ -12,6 +12,23 @@ categories = [
 images = ["/images/samba.jpg"]
 +++
 
+Carnival is at the height of the season,
+so it's a good time to publish the first post in 2024!
+
+Samba is not only popular dance from Brasil
+and music instrument, but also a unix service.
+
+Typically in a home LAN, you need some interoperability 
+between your linux and windows machines.
+For instance file sharing between home server
+and personal computers of the family members.
+And one of the simplest solutions for that on Linux is...
+Yes, you nailed it, Samba!
+
+Samba, according to its manual, is a collection of programs
+that implements Sever Message Block (SMB) protocol
+also known as Common Internet File System (CIFS).
+
 {{< figure alt="Samba - carnival in Brasil" src="/images/samba.jpg" caption="Samba" >}}
 
 ## Install samba
@@ -57,3 +74,9 @@ net usershare info --long
 sudo ufw allow from 192.168.10.0/24 to any app samba
 sudo ufw reload
 ```
+
+## Other options
+
+- NFS
+- WebDav
+- NextCloud
