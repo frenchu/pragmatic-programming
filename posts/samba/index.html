@@ -50,12 +50,12 @@ You can lock unix accounts with <code>passwd</code> as a security measure.</p><p
 <span class=sr-only>Link to heading</span></a></h2><p>And now the most interesting part. Because of Samba group membership, you can configure shares as a regular user
 without sudo. Make sure all users have unix access rights to navigate and read shared files and directories.
 It can be easily done by changing group ownership of the files to the <code>sambashare</code>.</p><p>In the example below only current user (you) may access priv share, while docs are shared with karen.
-Access is denided for everyone else. (<code>everyone</code> is a special identifier).</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo chgrp -R sambashare shares/
+Access is denided for everyone else.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo chgrp -R sambashare shares/
 </span></span><span class=line><span class=cl>net usershare add priv /shares/Documents/priv <span class=s2>&#34;My Stuff&#34;</span> <span class=nv>$USER</span>:f,everyone:d <span class=nv>guest_ok</span><span class=o>=</span>n
 </span></span><span class=line><span class=cl>net usershare add docs /shares/Documents/docs <span class=s2>&#34;Shared Documents&#34;</span> <span class=nv>$USER</span>:f,karen:f,everyone:d <span class=nv>guest_ok</span><span class=o>=</span>n
 </span></span></code></pre></div><p>Here&rsquo;s a quick explenation of samba ACLs (access control list). Username and access type are joined with colon
 and the list elements are separated with coma. Access type can be:</p><ul><li><code>f</code> for full access</li><li><code>r</code> for read-only</li><li><code>d</code> for denied</li></ul><p>Add guest_ok=n to disable guest access. <code>everyone</code> is a special identifier meaning all samba users.
-By default everyone has read only access.</p><h2 id=verify-users-and-shares>Verify users and shares
+By default all users have read only access.</p><h2 id=verify-users-and-shares>Verify users and shares
 <a class=heading-link href=#verify-users-and-shares><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>You can check samba users and available shares with following commands.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo pdbedit -L -v
 </span></span><span class=line><span class=cl>net usershare info --long
@@ -72,4 +72,4 @@ don&rsquo;t forget to allow access Samba service from the hosts in your local ne
 Paweł Weselak
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.
-[<a href=https://github.com/frenchu/pragmatic-programming/tree/c6edb1454cddb1c169ac2d138188baf0a12c3270 target=_blank rel=noopener>c6edb14</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
+[<a href=https://github.com/frenchu/pragmatic-programming/tree/0d7f13d4e8bb729d85516b2abff61fc637b185d7 target=_blank rel=noopener>0d7f13d</a>]</section></footer></main><script src=https://pawelweselak.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
