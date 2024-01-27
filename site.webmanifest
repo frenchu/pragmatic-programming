@@ -1,0 +1,22 @@
+{
+  "short_name": "pragmatic programming",
+  "name": "pragmatic programming - Paweł Weselak's blog",
+  "description": "Homepage and Technical Blog of Paweł Weselak pragmatyczne programowanie",
+  "icons": [{
+    "src": "images/favicon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml"
+  }, {
+    "src": "images/favicon-16x16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  }, {
+    "src": "images/favicon-32x32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  }],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
