@@ -5,5 +5,5 @@ description = "How to quickly write an application to load thousands of records 
 tags = ["spring","spring-batch","data stores"]
 categories = ["backend"]
 series = ["spring"]
-externalLink = "https://blog.j-labs.pl/2017/12/How-to-quickly-write-an-application-to-load-thousands-of-records-into-DB-using-Spring-Batch"
+externalLink = "https://www.j-labs.pl/blog-technologiczny/how-to-quickly-write-an-application-to-load-thousands-of-records-into-db-using-spring-batch/"
 +++
