@@ -17,5 +17,6 @@ git config --global commit.gpgsign true
 git config --global tag.gpgsign true
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.pub)" >> ~/.ssh/allowed_signers
+git verify-commit HEAD
 git log --show-signature
 ```

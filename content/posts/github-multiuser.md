@@ -186,6 +186,10 @@ One caveat of `hasconfig` is that you need to have quite recent version of git i
 Presented three methods of configuring git may be useful also in other scenarios.
 You can not only apply different SSH keys, but also for instance sign commits with separate PGP signatures.
 
+One noteworthy remark before the end. The order of reading config values from files is important.
+Values read later will overwrite previous ones. Please bear in mind to keep `includeIf` directive at the end of the git config file.
+Otherwise config set in included file may not be applied.
+
 Leave your ideas in the comments section below.
 
 Happy hacking!
