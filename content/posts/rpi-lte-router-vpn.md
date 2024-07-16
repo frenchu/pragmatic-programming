@@ -47,12 +47,12 @@ I will assume that OVPN config file contains server CA and client certificates t
 
 Make sure you have required OS packages:
 ```bash
-sudo network-manager-openvpn
+sudo apt install network-manager-openvpn
 ```
 
 Import your OpenVPN configuration file to NetworkManager:
 ```bash
-sudo nmcli connection import file rpi.ovpn
+sudo nmcli connection import type openvpn file rpi.ovpn
 ```
 
 Example output:
@@ -68,19 +68,42 @@ After importing connection, we can tweak several settings.
 
 ```shell
 sudo nmcli connection modify rpi +vpn.user-name rpi
-sudo nmcli connection modify rpi +vpn.password-flag 0
-sudo nmcli connection modify rpi +vpn.cert-pass-flag 0
+sudo nmcli connection modify rpi +vpn.password-flags 0
+sudo nmcli connection modify rpi +vpn.cert-pass-flags 0
 sudo nmcli connection modify rpi +vpn.secrets password='VPN_USER_PASSWORD'
 sudo nmcli connection modify rpi +vpn.secrets cert-pass='PRIVATE_KEY_PASSWORD'
 sudo nmcli connection modify t-mobile +connection.secondaries 24c3311d-c49f-4392-931d-7bd58cf8b4d3
 ```
 
-`user-name` param is self explenatory, although `password-flag` and `cert-pass-flag` require some comments.
+`user-name` param is self explenatory, although `password-flags` and `cert-pass-flags` require some comments.
 Normally, in a desktop environment NetworkManager will read passwords from password manager like Gnome keyring.
 In automated, non-interactive setups it may make more sense to store passwords in NetworkManager connection config.
-To accomplish that we set the flags to `0`.
+To accomplish that we set the flags to `0`. If the above config params doesn't work, you can edit connection config file directly.
 
-Last line will set VPN connection as a secondary connection for a GSM connection, which means VPN client connection
+```shell
+sudoedit /etc/NetworkManager/system-connections/rpi.nmconnection
+```
+
+and put these entries
+
+```
+[vpn]
+...
+password-flags=0
+cert-pass-flags=0
+
+[vpn-secrets]
+password=VPN_USER_PASSWORD
+cert-pass=PRIVATE_KEY_PASSWORD
+```
+
+Restart NetworkManager to apply new settings
+
+```shell
+sudo systemctl restart NetworkManager
+```
+
+Command with `connection.secondaries` will set VPN connection as a secondary connection for a GSM connection, which means VPN client connection
 will be started whenever the GSM connectionn is up.
 
 ## Web resources
