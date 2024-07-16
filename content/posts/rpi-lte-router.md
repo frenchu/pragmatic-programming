@@ -113,7 +113,7 @@ ping -I wwan0 8.8.8.8
 
 As a next step we probably want to add a gsm connection profile in Network Manager:
 ```shell
-sudo nmcli c add type gsm ifname '*' con-name 't-mobile' apn internet pin xxxx connection.autoconnect yes
+sudo nmcli c add type gsm ifname '*' con-name 't-mobile' apn internet gsm.pin xxxx connection.autoconnect yes
 ```
 
 Setting `connection.autoconnect` property will make the connection to start at the system boot.
@@ -132,7 +132,7 @@ You may find below commands useful in diagnosing connectivity problems.
 lsusb
 lsusb -t
 ip a
-ping -I 8.8.8.8
+ping -I wwan0 8.8.8.8
 mmcli -L
 mmcli -m 0
 mmcli -m 0 -b 0
