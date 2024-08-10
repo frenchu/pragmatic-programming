@@ -58,6 +58,12 @@ Alternatively, you may want to return your key contents in more dynamic way (e.g
 git config --global gpg.ssh.defaultKeyCommand ~/bin/key_provider.sh
 ```
 
+If you have SSH agent set up, `ssh-add -L` can be very convinient here
+
+```shell
+git config --global gpg.ssh.defaultKeyCommand "ssh-add -L"
+```
+
 Now you can go to one of your repos and commit anything with your signature
 
 ```shell
