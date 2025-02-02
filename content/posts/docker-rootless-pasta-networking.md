@@ -71,7 +71,7 @@ TimeoutSec=0
 RestartSec=10
 ```
 
-Also I removed unnecessary settings from `[Service]` section (they should be in the `[Unit]` section according to [manual](https://www.man7.org/linux/man-pages/man5/systemd.unit.5.html)):
+Also I removed unnecessary settings from `[Service]` section (they should be in the `[Unit]` section according to the [manual](https://www.man7.org/linux/man-pages/man5/systemd.unit.5.html)):
 ```
 [Service]
 StartLimitBurst=3
@@ -86,7 +86,7 @@ Another solution might be use of `ExecStartPre` option inside `docker.service` d
 ExecStartPre=sh -c 'until ping -c 1 pawelweselak.com; do sleep 1; done'
 ```
 
-Although, I've haven't tested it yet. I'm OK with restarting docker once during boot to mitigate the problem.
+Although, I haven't tested it yet. I'm OK with restarting docker once during boot to mitigate the problem.
 
 ## Bonus
 
