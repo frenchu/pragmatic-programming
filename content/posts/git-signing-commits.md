@@ -31,7 +31,7 @@ I believe in most of the git hosting services it looks quite similar. If you are
 Remember to keep your private key safe at all times! Don't copy or move your private key between machines.
 Better off generate another key for a new device. Remove key from GitHub as soon as it is no longer needed or you lost control over it.
 
-Personally, I use the same key for signing and authentication. Perhabs it should be separated.
+Personally, I use the same key for signing and authentication. Perhaps it should be separated.
 Please let me know what you think in the comments section below. ;)
 
 ## Configuring git in your local
