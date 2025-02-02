@@ -49,7 +49,7 @@ It made me think that the network was not ready when pasta was starting.
 
 ## Failed Attempts
 
-My first idea was to make sure that network is ready and only than trigger `docker.service`. I read about `network-online.target` on [systemd.io](https://systemd.io/NETWORK_ONLINE/) and it was promising.
+My first idea was to make sure that network is ready and only then trigger `docker.service`. I read about `network-online.target` on [systemd.io](https://systemd.io/NETWORK_ONLINE/) and it was promising.
 
 Unfortunately, setting dependency between `network-online.target` and `docker.service` didn't help. Apparently this approach is only valid for system services and don't work with user services.
 
@@ -90,7 +90,7 @@ Although, I haven't tested it yet. I'm OK with restarting docker once during boo
 
 ## Bonus
 
-I forgot to mention that I had one more issue with pasta. It was specific to Debian distro. In this case `pasta` was blocked by `apparmor`, because of missing `apparmor` profile specific for `pasta` executable.
+I forgot to mention that I had one more issue with Pasta. It was specific to Debian distro. In this case `pasta` was blocked by `apparmor`, because of missing `apparmor` profile specific for `pasta` executable.
 
 To solve that I changed symlinks to hardlinks:
 ```shell
