@@ -75,7 +75,7 @@ Also I removed unnecessary settings from `[Service]` section (they should be in 
 ```
 [Service]
 StartLimitBurst=3
-StartLimitInterval=60
+StartLimitInterval=60s
 ```
 
 ## Alternatives
