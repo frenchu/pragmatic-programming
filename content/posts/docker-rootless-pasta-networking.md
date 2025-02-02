@@ -2,7 +2,7 @@
 publishDate = 2025-02-02
 title = "Conquer Issues with Pasta in Rootless Docker"
 description = "Docker Rootless Networking with Pasta Network Driver"
-tags = ["containers", "docker", "rootless", "pasta"]
+tags = ["containers", "docker", "rootless", "pasta", "systemd"]
 categories = ["tools", "security", "networking"]
 series = ["docker"]
 images = ["/images/shipping.jpg"]
