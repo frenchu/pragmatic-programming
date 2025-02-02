@@ -11,11 +11,11 @@ images = ["/images/shipping.jpg"]
 In front of geopolitical tensions and increasing risk of cyber-attacks, I am making efforts to
 gain more and more hard skills in the area of cyber security.
 
-Some time ago I switched from running docker daemon as root to so called [rootless containers](https://github.com/rootless-containers/rootlesskit). It allows to run docker daemon as regular user with reduced privileges. The whole process is very well documented in the [docker documentation](https://docs.docker.com/engine/security/rootless/). However there are some limitations and trade-offs.
+Some time ago I switched from running docker daemon as root to so called [rootless containers](https://github.com/rootless-containers/rootlesskit). It allows to run docker daemon as regular user with reduced privileges. The whole process is very well described in the [docker documentation](https://docs.docker.com/engine/security/rootless/). However there are some limitations and trade-offs.
 
 One important aspect which still needs improvement is networking, especially in terms of network performance. There are several network drivers for rootless docker which help to mitigate the problem. I decided to test [pasta](https://passt.top/) driver.
 
-Even if Pasta is still in experimental phase, it works pretty well. However in my case I need to solve one issue. In this article I want to describe a problem and present the solution I came up. 
+Even if Pasta is still in experimental phase, it works pretty well. However, in my case I need to solve one issue. In this article I want to describe a problem and present the solution I came up. 
 
 {{< figure alt="Shipping - cargo ship full of containers in a dock" src="/images/shipping.jpg" caption="Docker containers" >}}
 
