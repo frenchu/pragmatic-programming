@@ -15,7 +15,7 @@ Some time ago I switched from running docker daemon as root to so called [rootle
 
 One important aspect which still needs improvement is networking, especially in terms of network performance. There are several network drivers for rootless docker which help to mitigate the problem. I decided to test [pasta](https://passt.top/) driver.
 
-Even if Pasta is still in experimental phase, it works pretty well. However, in my case I need to solve one issue. In this article I want to describe a problem and present the solution I came up. 
+Even if Pasta is still in experimental phase, it works pretty well. However, in my case I had to solve one issue. In this article I want to describe a problem and present the solution I came up with. 
 
 {{< figure alt="Shipping - cargo ship full of containers in a dock" src="/images/shipping.jpg" caption="Docker containers" >}}
 
