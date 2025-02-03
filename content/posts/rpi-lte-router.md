@@ -2,7 +2,7 @@
 date = 2023-11-04
 publishDate = 2023-11-04
 title = "LTE router on Raspberry Pi"
-description = "Configuring cellurar networking with Waveshare GSM hat"
+description = "Configuring cellular networking with Waveshare GSM hat"
 tags = [
   "IoT",
   "networking",

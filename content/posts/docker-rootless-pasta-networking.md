@@ -1,7 +1,7 @@
 +++
 publishDate = 2025-02-02
-title = "Conquer Issues with Pasta in Rootless Docker"
-description = "Docker Rootless Networking with Pasta Network Driver"
+title = "Conquer issues with Pasta in Rootless Docker"
+description = "Docker Rootless networking with Pasta network driver"
 tags = ["containers", "docker", "rootless", "pasta", "systemd"]
 categories = ["tools", "security", "networking"]
 series = ["docker"]
@@ -19,7 +19,7 @@ Even if Pasta is still in experimental phase, it works pretty well. However, in 
 
 {{< figure alt="Shipping - cargo ship full of containers in a dock" src="/images/shipping.jpg" caption="Docker containers" >}}
 
-## Problem Statement
+## Problem statement
 
 What I observed, after setting up rootless docker in my Debian and Ubuntu systems, is problem during system boot. The docker daemon, configured for a user, didn't start.
 
@@ -47,13 +47,13 @@ Jan 17 07:50:06 jupiter pasta[1223]: External interface not usable
 
 It made me think that the network was not ready when pasta was starting.
 
-## Failed Attempts
+## Failed attempts
 
 My first idea was to make sure that network is ready and only then trigger `docker.service`. I read about `network-online.target` on [systemd.io](https://systemd.io/NETWORK_ONLINE/) and it was promising.
 
 Unfortunately, setting dependency between `network-online.target` and `docker.service` didn't help. Apparently this approach is only valid for system services and don't work with user services.
 
-## Working Solution
+## Working solution
 
 So what I did instead? I went back to the original error message telling me that 'Start request repeated too quickly'. It seemed like `systemd` was trying to restart docker several times, but it eventually gave up.
 
