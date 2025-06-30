@@ -8,7 +8,7 @@ tags:
   - "smarthome"
 categories:
   - "home automation"
-images
+images:
   - "/images/shutters.jpg"
 ---
 
