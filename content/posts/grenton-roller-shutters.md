@@ -168,7 +168,7 @@ The problem is that after a CLU rediscovery, object identifiers may change.
 
 ## About Grenton
 
-Grenton is a smart home system developed in Poland. It is highly customizable thanks to `Lua` scripts that can provided by the user them self. It comprises set of modules and external panels that can be connected together with the communication bus. System configuration is build on and deployed with proprietary IDE based on Eclipse. CLU is a central unit keeping track of the current state of the system and controlling other modules. To some extend modules can work independently from CLU in a distributed logic mode without connection to the central unit. 
+Grenton is a smart home system developed in Poland. It is highly customizable thanks to `Lua` scripts that can be provided by the user them self. It comprises set of modules and external panels that can be connected together with the communication bus. System configuration is build on and deployed with proprietary IDE based on Eclipse. CLU is a central unit keeping track of the current state of the system and controlling other modules. To some extend modules can work independently from CLU in a distributed logic mode without connection to the central unit. 
 
 ## Resources
 
