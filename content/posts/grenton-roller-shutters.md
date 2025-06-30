@@ -2,7 +2,7 @@
 author: Paweł Weselak
 title: Script for Grenton roller shutters
 description: Using Object Oriented Paradigm in Lua to control Grenton RollerShutter module
-date: 2024-08-31
+date: 2025-06-30
 tags:
   - "grenton"
   - "smarthome"
@@ -12,7 +12,7 @@ images
   - "/images/shutters.jpg"
 ---
 
-> [!Warning] Warning!  
+> **Warning!**
 > The Grenton CLU does not validate scripts. `Lua` is not a strongly typed language, and many issues in scripts only surface at runtime. The CLU may enter _emergency mode_ if an error in the script is encountered during execution. In such cases, you should fix the script or restore a previously working configuration. I recommend making a backup of your project before uploading complex scripts and making or applying changes to scripts incrementally.
 
 {{< figure alt="Old fashioned and rusty shutters" src="/images/shutters.jpg" caption="Shutters" >}}
