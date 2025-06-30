@@ -1,6 +1,7 @@
 ---
 author: Paweł Weselak
-title: Script for Roller Shutters
+title: Script for Grenton roller shutters
+description: Using Object Oriented Paradigm in Lua to control Grenton RollerShutter module
 date: 2024-08-31
 tags:
   - "grenton"
